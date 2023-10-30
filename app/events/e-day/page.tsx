@@ -27,14 +27,14 @@ export default async function page() {
 
     return (
         <div>
-            <h1 className="my-6 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            <h1 className="mt-10 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
                 List of Department
             </h1>
             <div className="hidden lg:block">
                 <DepartmentsForm/>
             </div>
             <div className="lg:hidden">
-                <Link href="/e-day/1">
+                <Link href="/events/e-day/1">
                     <MobileDepartForm/>
                 </Link>
             </div>

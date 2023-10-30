@@ -1,49 +1,16 @@
 "use client";
 
-import {useFormState, useFormStatus} from "react-dom";
+import {useFormState} from "react-dom";
 import {login} from "./action";
-import {Button} from "@/components/ui/button";
-import {Loader2} from "lucide-react";
+import FormButton from "@/app/login/FormButton";
 
-// just testing
 const initialState = {
   message: null,
 }
 
-export function ButtonForm() {
-  return (
-    <Button
-      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
-      type="submit"
-    >
-      Sign in
-    </Button>
-  );
-}
-
-export function SubmitButton() {
-  const {pending} = useFormStatus();
-
-  return (
-    <>
-      {pending ? <Loading/> : <ButtonForm/>}
-    </>
-  );
-}
-
-export function Loading() {
-  return (
-    <Button
-      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
-      disabled>
-      <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
-      Please wait
-    </Button>
-  )
-}
-
 export default function LoginForm() {
   const [state, formAction] = useFormState(login, initialState)
+
   return (
     <div>
       <form action={formAction}>
@@ -76,9 +43,7 @@ export default function LoginForm() {
             />
           </div>
         </div>
-        <div className="mt-6 text-center">
-          <SubmitButton/>
-        </div>
+        <FormButton/>
       </form>
       <div>
         <p className="mt-1 md:mt-2 text-sm md:text-base text-red-500">

@@ -1,0 +1,37 @@
+'use client'
+
+import {Button} from "@/components/ui/button";
+import {Loader2} from "lucide-react";
+import {useFormStatus} from "react-dom";
+
+export function SubmitButton() {
+  return (
+    <Button
+      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
+      type="submit"
+    >
+      Sign in
+    </Button>
+  );
+}
+
+export function LoadingButton() {
+  return (
+    <Button
+      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
+      disabled>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
+      Please wait
+    </Button>
+  )
+}
+
+export default function FormButton() {
+  const {pending} = useFormStatus();
+
+  return (
+    <div className="mt-6 text-center">
+      {pending ? <LoadingButton/> : <SubmitButton/>}
+    </div>
+  )
+}
