@@ -63,6 +63,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+<<<<<<< HEAD
   }
 }
  
@@ -75,3 +76,16 @@
   }
 }
 
+=======
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+>>>>>>> 319e80915d9f45bd7f9eafc67d24e36478dfeb80
