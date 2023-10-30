@@ -185,7 +185,7 @@ export default function DepartmentsForm() {
                                     .getColumn("department")
                                     ?.setFilterValue(event.target.value)
                             }
-                            className="max-w-sm border-2 "
+                            className="max-w-sm border-2 border-gray-300 focus:outline-none focus:border-transparent"
                         />
                         <DropdownMenu>
                             <DropdownMenuContent align="end">
