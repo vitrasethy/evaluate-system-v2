@@ -10,18 +10,18 @@ export default function evaluate() {
                     className="w-screen xl:w-[70%] p-6 bg-white border-2 border-gray-300 rounded-lg shadow sm:p-6 md:p-16">
                     <form className="space-y-6" action="#">
 
-                        <div className='flex flex-wrap justify-around items-center '>
-                            <div>
+                        <div className='flex flex-wrap justify-around'>
+                            <div className='sm:w-[45%] my-4'>
                                 <Image alt='' src="/bgcol.png" width={400} height={400}/>
                             </div>
-                            <div>
-                                <h2 className="my-4 text-3xl lg:text-4xl 2xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#024164] to-[#025886] text-center drop-shadow-[3px_1px_rgba(2,65,100,0.3)] ">EVALUATION
-                                    FORM</h2>
-                                <div className='font-semibold md:text-xl'>
-                                    <p>Project Code: </p>
-                                    <p>Project Name: A NEW MODEL FOR</p>
+                            <div className='sm:w-[50%] mx-[1%]'>
+                                <h2 className="my-4 text-3xl lg:text-4xl 2xl:text-[2.75rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#024164] to-[#025886] drop-shadow-[3px_1px_rgba(2,65,100,0.3)] ">EVALUATION&nbsp;FORM</h2>
+                                <div>
+                                    <p className='text-lg font-medium'>Project Code: <span className='font-normal text-base'>003</span></p>
+                                    <p className='text-lg font-medium'>Project Name: <span className='font-normal text-base'>GASTROMOD AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING</span></p>
                                 </div>
                             </div>
+
                         </div>
 
                         <div
