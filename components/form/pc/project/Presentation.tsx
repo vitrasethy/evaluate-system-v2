@@ -248,6 +248,11 @@ export const columns: ColumnDef<Present>[] = [
     ),
   },
   {
+    accessorKey: "judge1",
+    header: () => {},
+    cell: () => {}
+  },
+  {
     accessorKey: "complete",
     header: () => {},
     cell: () => (
@@ -257,39 +262,12 @@ export const columns: ColumnDef<Present>[] = [
     ),
   },
   {
-    accessorKey: "judge1",
-    header: () => {},
-    cell: () => {}
-  },
-  {
     accessorKey: "judge2",
     header: () => {},
     cell: () => {}
   },
   
-  {
-    accessorKey: "year",
-    header: () => <div className="text-start hidden md:block"></div>,
-    cell: () => {
-      return (
-        <div className="text-start font-medium">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <div className="h-8 w-8 p-0 cursor-pointer">
-                <span className="sr-only">Open menu</span>
-                <MoreHorizontal className="h-4 w-4" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-gray-50 text-black">
-              <DropdownMenuLabel>Action</DropdownMenuLabel>
-              <DropdownMenuItem>Edit</DropdownMenuItem>
-              <DropdownMenuItem>Delete</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    },
-  },
+  
   {
     accessorKey: "judge3",
     header: () => {},
