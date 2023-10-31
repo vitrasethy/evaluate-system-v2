@@ -206,19 +206,20 @@ export const columns: ColumnDef<Poster>[] = [
       <div className="lowercase text-start ml-4 text-base">{row.getValue("score")}</div>
     ),
   },
+  
+  {
+    accessorKey: "judge1",
+    header: () => {},
+    cell: () => {}
+  },
   {
     accessorKey: "complete",
     header: () => {},
     cell: () => (
       <div className=" text-center text-base ">
-        <Link href="/events/e-day/1/1/evaluate">Evaluate</Link>
+        <Link href="/events/e-day/1/evaluate">Evaluate</Link>
       </div>
     ),
-  },
-  {
-    accessorKey: "judge1",
-    header: () => {},
-    cell: () => {}
   },
   {
     accessorKey: "judge2",
@@ -226,30 +227,7 @@ export const columns: ColumnDef<Poster>[] = [
     cell: () => {}
   },
  
-  {
-    accessorKey: "year",
-    header: () => <div className="text-start hidden md:block"></div>,
-    cell: () => {
-      return (
-        <div className="text-start font-medium">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <div className="h-8 w-8 p-0 cursor-pointer">
-                <span className="sr-only">Open menu</span>
-                <MoreHorizontal className="h-4 w-4" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-gray-50 text-black">
-              <DropdownMenuLabel>Action</DropdownMenuLabel>
-              <DropdownMenuItem>Edit</DropdownMenuItem>
-              <DropdownMenuItem>Delete</DropdownMenuItem>
-              <DropdownMenuItem>Evaluate</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    },
-  },
+  
   {
     accessorKey: "judge3",
     header: () => {},
@@ -291,7 +269,9 @@ export default function ProjectsForm() {
   });
 
   return (
+    
     <div className="flex justify-center items-center">
+     
       <div className="present ">
         <Card className=" rounded-t-none border-0">
           <CardContent className="mt-6">
