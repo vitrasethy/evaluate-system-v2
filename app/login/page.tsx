@@ -53,7 +53,7 @@ export default function Home() {
             <div className="flex-grow h-px bg-gray-400"></div>
           </div>
           <div className="text-center mt-2">
-            <h1 className="text-sm md:text-base">Don't have an account?</h1>
+            <h1 className="text-sm md:text-base">Don&apos;t have an account?</h1>
             <button
               className="mt-4 bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
               type="submit"

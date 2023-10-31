@@ -17,15 +17,15 @@ export default function Navbar() {
           <div className="flex justify-around w-2/2 focus:outline-none focus:ring uppercase">
             <Link
               className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
-              href="/events/e-day/1/evaluate"
+              href={"/events/e-day/1/evaluate"}
             >
               Evaluation
             </Link>
             <Link
               className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
-              href=""
+              href={"/logout"}
             >
-              Account
+              Logout
             </Link>
           </div>
         </div>
