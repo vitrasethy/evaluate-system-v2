@@ -7,7 +7,7 @@ import {useFormStatus} from "react-dom";
 export function SubmitButton() {
   return (
     <Button
-      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
+      className="bg-[#024164] hover:bg-[#03679d] w-full py-6 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
       type="submit"
     >
       Sign in
@@ -18,7 +18,7 @@ export function SubmitButton() {
 export function LoadingButton() {
   return (
     <Button
-      className="bg-[#024164] hover:bg-[#03679d] w-full px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
+      className="bg-[#024164] hover:bg-[#03679d] w-full py-6 text-sm md:text-lg leading-5 rounded-md font-semibold text-white"
       disabled>
       <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
       Please wait
