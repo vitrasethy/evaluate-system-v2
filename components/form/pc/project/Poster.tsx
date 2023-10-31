@@ -274,7 +274,7 @@ export default function ProjectsForm() {
      
       <div className="present ">
         <Card className=" rounded-t-none border-0">
-          <CardContent className="mt-6">
+          <CardContent className="">
             <div className="flex justify-center">
               <div className="w-full">
                 <div className="flex items-center md:mb-5">
