@@ -1,4 +1,4 @@
-import MobileProjForm from "@/components/form/mobile/project";
+// import MobileProjForm from "@/components/form/mobile/Project";
 import ProjectsForm from "@/components/form/pc/project/ProjectsForm";
 
 export default function Page() {
@@ -34,7 +34,7 @@ export default function Page() {
         <ProjectsForm />
       </div>
       <div className="lg:hidden">
-        <MobileProjForm />
+        {/*<MobileProjForm />*/}
       </div>
     </div>
   );
