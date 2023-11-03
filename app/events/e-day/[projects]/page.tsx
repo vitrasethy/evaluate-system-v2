@@ -1,4 +1,4 @@
-import MobileProjForm from "@/components/form/mobile/Project";
+import MobileProjForm from "@/components/form/mobile/project";
 import ProjectsForm from "@/components/form/pc/project/ProjectsForm";
 
 export default function Page() {

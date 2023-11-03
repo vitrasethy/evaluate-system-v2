@@ -41,7 +41,7 @@ export function Hamburger() {
         >
           <li>
             <a href="/award" className="block px-4 py-2">
-              Award
+            Result
             </a>
           </li>
           <li>

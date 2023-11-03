@@ -28,7 +28,7 @@ const DropdownMenu = () => {
               href={"/award"}
               className="block px-4 py-2 text-sm focus:outline-none focus:ring"
             >
-              Award
+              Result
             </Link>
             <Link
               href={"/e-day/1"}

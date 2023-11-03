@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Hamburger } from "./Hamburger";
+import { Hamburger } from "./hamburger";
 
 export default function Navbar() {
   return (
@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link href="/">
             <Image src="/logoFE.webp" alt="" width={50} height={50} />
           </Link>
-          <Hamburger />
+          <Hamburger/>
         </div>
       </div>
     </div>

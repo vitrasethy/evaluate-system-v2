@@ -93,7 +93,7 @@ export const columns: ColumnDef<Department>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className="pr-20 md:flex"
+          className="pr-20"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -148,7 +148,7 @@ export default function DepartmentsForm() {
     <div className="deparment_form">
       <div className="flex justify-center">
         <div className="w-[60%] h-[47%] py-5 px-5 border-1 mt-10 bg-white rounded-xl shadow-2xl border-2 border-gray-300">
-          <div className="flex items-center md:mb-5 ">
+          <div className="flex items-center">
             <Input
               placeholder="Filter department..."
               value={
