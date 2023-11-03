@@ -1,9 +1,9 @@
 // Import React and useState, useEffect hooks
 "use client"
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 
 // Define a component that takes the text as a prop
-function TextWithAnimation({ text }: { text:any}) {
+function TextWithAnimation({text}: { text: any }) {
   // Use a state variable to store the animation class
   const [animationClass, setAnimationClass] = useState("");
   const [animationClass2, setAnimationClass2] = useState("");
@@ -23,20 +23,20 @@ function TextWithAnimation({ text }: { text:any}) {
       setAnimationClass2("noSpace")
       setIsLonger(false)
     }
-    
+
   }, [text]); // Run the effect whenever the text prop changes
   // Return the JSX element with the text and the animation class
   return (
-      //   <div className="relative moving-text-button">
-      //   <div className={animationClass}>{text}</div>
-      // </div>
+    //   <div className="relative moving-text-button">
+    //   <div className={animationClass}>{text}</div>
+    // </div>
 
-      <div id='rssBlock'>
-   <p className="cnnContents">
-       <span className={animationClass}>&nbsp;&nbsp;&nbsp;&nbsp;{text}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <div id='rssBlock'>
+      <p className="cnnContents">
+        <span className={animationClass}>&nbsp;&nbsp;&nbsp;&nbsp;{text}&nbsp;&nbsp;&nbsp;&nbsp;</span>
         {isLonger && <span className={animationClass2}>&nbsp;&nbsp;&nbsp;&nbsp;{text}&nbsp;&nbsp;&nbsp;&nbsp;</span>}
       </p>
-      </div>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function evaluate() {
+export default function Page() {
 
     return (
         <main className='md:mx-[3%] my-[5%]'>

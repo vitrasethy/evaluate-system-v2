@@ -83,7 +83,7 @@ export const columns: ColumnDef<Department>[] = [
       <div className="text-center w-full">Department</div>
     ),
     cell: ({ row }) => (
-      <Link href="/events/e-day/1">
+      <Link href={"/events/e-day/1"}>
         <div className="capitalize">{row.getValue("department")}</div>
       </Link>
     ),

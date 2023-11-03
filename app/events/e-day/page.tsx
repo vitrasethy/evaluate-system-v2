@@ -22,22 +22,23 @@ import MobileDepartForm from "@/components/form/mobile/Department";
 //   return res.json();
 // }
 
-export default async function page() {
-    // const data = await getData();
+export default async function Page() {
+  // const data = await getData();
 
-    return (
-        <div>
-            <h1 className="mt-10 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-                List of Department
-            </h1>
-            <div className="hidden lg:block">
-                <DepartmentsForm/>
-            </div>
-            <div className="lg:hidden">
-                <Link href="/events/e-day/1">
-                    <MobileDepartForm/>
-                </Link>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h1
+        className="mt-10 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+        List of Department
+      </h1>
+      <div className="hidden lg:block">
+        <DepartmentsForm/>
+      </div>
+      <div className="lg:hidden">
+        <Link href={"/events/e-day/1"}>
+          <MobileDepartForm/>
+        </Link>
+      </div>
+    </div>
+  );
 }

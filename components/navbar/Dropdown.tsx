@@ -25,13 +25,13 @@ const DropdownMenu = () => {
         <div className="origin-top-right absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-[#014164] ring-black ring-opacity-5 focus:outline-none uppercase z-50 ">
           <div className="py-1">
           <Link
-              href={"/award"}
+              href="/award"
               className="block px-4 py-2 text-sm focus:outline-none focus:ring"
             >
               Award
             </Link>
             <Link
-              href={"/e-day/1"}
+              href="/e-day/1"
               className="block px-4 py-2 text-sm focus:outline-none focus:ring"
             >
               My Evaluation

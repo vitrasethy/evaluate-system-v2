@@ -1,10 +1,11 @@
 import Image from "next/image";
 import LoginForm from "./LoginForm";
 
-export default function Home() {
+export default function Page() {
   return (
     <main className="bg-[url('/stem.jpeg')] bg-cover h-screen">
-      <div className="flex max-[1200px]:flex-col justify-evenly max-sm:pb-[15%] max-sm:justify-center items-center bg-sky-950/30 backdrop-brightness-75 h-full">
+      <div
+        className="flex max-[1200px]:flex-col justify-evenly max-sm:pb-[15%] max-sm:justify-center items-center bg-sky-950/30 backdrop-brightness-75 h-full">
         <div className="flex justify-center items-center">
           <div className="mr-2">
             <Image
@@ -39,11 +40,18 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-[350px] sm:w-[500px] max-[768px]:mx-[5%] max-sm:mt-[10%] bg-[#fff] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] p-10 rounded-xl">
+        <div
+          className="w-[350px] sm:w-[500px] max-[768px]:mx-[5%] max-sm:mt-[10%] bg-[#fff] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] p-10 rounded-xl">
           <h1 className="text-black text-center min-[300px]:text-2xl sm:text-4xl font-medium">
             Login
           </h1>
-          <LoginForm />
+          <LoginForm/>
+          <div className={"mt-4 flex flex-col justify-center items-center"}>
+            <p>If you are Admin, please click the button below 👇</p>
+            <button type="button"
+                    className="mt-4 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Admin Dashboard
+            </button>
+          </div>
         </div>
       </div>
     </main>

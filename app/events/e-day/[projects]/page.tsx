@@ -1,7 +1,7 @@
-import MobileProjForm from "@/components/form/mobile/project";
+import MobileProjForm from "@/components/form/mobile/Project";
 import ProjectsForm from "@/components/form/pc/project/ProjectsForm";
 
-export default function page() {
+export default function Page() {
   return (
     <div>
       <h1 className="mt-10 mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
