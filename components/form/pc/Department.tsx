@@ -80,7 +80,7 @@ export const columns: ColumnDef<Department>[] = [
   {
     accessorKey: "department",
     header: () => (
-      <div className="text-center hidden md:block w-full">Department</div>
+      <div className="text-center w-full">Department</div>
     ),
     cell: ({ row }) => (
       <Link href="/events/e-day/1">
@@ -93,7 +93,7 @@ export const columns: ColumnDef<Department>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className="pr-20 hidden md:flex"
+          className="pr-20 md:flex"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -103,12 +103,12 @@ export const columns: ColumnDef<Department>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase md:pl-14">{row.getValue("generation")}</div>
+      <div className="lowercase">{row.getValue("generation")}</div>
     ),
   },
   {
     accessorKey: "year",
-    header: () => <div className="text-center hidden md:block">Year</div>,
+    header: () => <div className="text-center">Year</div>,
     cell: ({ row }) => {
       const year = parseFloat(row.getValue("year"));
       return <div className="text-center font-medium">{year}</div>;
@@ -147,7 +147,7 @@ export default function DepartmentsForm() {
   return (
     <div className="deparment_form">
       <div className="flex justify-center">
-        <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-1 mt-10 bg-white rounded-xl shadow-2xl border-2 border-gray-300">
+        <div className="w-[60%] h-[47%] py-5 px-5 border-1 mt-10 bg-white rounded-xl shadow-2xl border-2 border-gray-300">
           <div className="flex items-center md:mb-5 ">
             <Input
               placeholder="Filter department..."
@@ -186,7 +186,7 @@ export default function DepartmentsForm() {
           </div>
           <div>
             <Table>
-              <TableHeader className="md:bg-gray-100 ">
+              <TableHeader className="bg-gray-100 ">
                 {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow className="" key={headerGroup.id}>
                     {headerGroup.headers.map((header) => {

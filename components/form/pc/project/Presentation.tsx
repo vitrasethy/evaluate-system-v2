@@ -124,7 +124,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "no",
     header: () => (
-      <div className="text-center hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-center w-full font-bold text-black text-lg">
         No
       </div>
     ),
@@ -137,7 +137,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "id",
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-start w-full font-bold text-black text-lg">
         ID
       </div>
     ),
@@ -153,7 +153,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "projectName",
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-start w-full font-bold text-black text-lg">
         Project Name
       </div>
     ),
@@ -166,7 +166,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "leader",
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-start w-full font-bold text-black text-lg">
         Leader
       </div>
     ),
@@ -182,7 +182,7 @@ export const columns: ColumnDef<Present>[] = [
     accessorKey: "judge",
 
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-start w-full font-bold text-black text-lg">
         Judge
       </div>
     ),
@@ -218,7 +218,7 @@ export const columns: ColumnDef<Present>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className=" text-start hidden md:flex w-full font-bold text-black text-lg"
+          className=" text-start w-full font-bold text-black text-lg"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -299,7 +299,7 @@ export default function ProjectsForm() {
         <CardContent>
           <div className="flex justify-center">
             <div className="w-full">
-              <div className="flex items-center md:mb-5">
+              <div className="flex items-center">
                 <DropdownMenu>
                   <DropdownMenuContent align="end">
                     {table
@@ -322,7 +322,7 @@ export default function ProjectsForm() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
-              <div className="md:mt-[-20px] mt-[-35px]">
+              <div>
                 <Table className="border-2 ">
                   <TableHeader className="bg-gray-300">
                     {table.getHeaderGroups().map((headerGroup) => (
