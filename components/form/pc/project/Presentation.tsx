@@ -14,7 +14,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -37,13 +37,11 @@ import {
 
 const data: Present[] = [
   {
+    no: 1,
     id: "IG8-4",
-    year: 1,
-    department: "Smart Attendance Tracker",
+    projectName: "Smart Attendance Tracker",
     leader: "MeySorng",
     judge: "4",
-    generation: "8",
-    no: 1,
     score: 60,
     complete: 1,
     judge1: "Olivia",
@@ -52,13 +50,11 @@ const data: Present[] = [
     judge4: "Sophia",
   },
   {
+    no: 2,
     id: "IG8-3",
-    year: 2,
-    department: "Efficient Inventory Management System",
+    projectName: "Efficient Inventory Management System",
     leader: "BongVitra",
     judge: "4",
-    generation: "6",
-    no: 2,
     score: 100,
     complete: 2,
     judge1: "Ava",
@@ -67,13 +63,11 @@ const data: Present[] = [
     judge4: "Luna",
   },
   {
+    no: 3,
     id: "IG8-2",
-    year: 3,
-    department: "AR-powered Tourist Guide",
+    projectName: "AR-powered Tourist Guide",
     leader: "Rithy",
     judge: "4",
-    generation: "7",
-    no: 3,
     score: 50,
     complete: 3,
     judge1: "Evelyn",
@@ -82,27 +76,24 @@ const data: Present[] = [
     judge4: "Isabella",
   },
   {
+    no: 4,
     id: "IG8-1",
-    year: 4,
-    department: "Interactive Language Learning Platform",
+    projectName: "Interactive Language Learning Platform",
     leader: "Bong Chhay",
     judge: "4",
-    generation: "5",
-    no: 4,
     score: 98,
     complete: 2,
     judge1: "Mia",
     judge2: "Luna",
     judge3: "Evelyn",
-    judge4: "Noah",  },
+    judge4: "Noah",
+  },
   {
+    no: 5,
     id: "IG8-3",
-    year: 5,
-    department: "Predictive Healthcare Analytics",
+    projectName: "Predictive Healthcare Analytics",
     leader: "Veha",
     judge: "4",
-    generation: "8",
-    no: 5,
     score: 74,
     complete: 1,
     judge1: "Liam",
@@ -113,8 +104,7 @@ const data: Present[] = [
 ];
 export type Present = {
   id: string;
-  year: number;
-  department:
+  projectName:
     | "Smart Attendance Tracker"
     | "Efficient Inventory Management System"
     | "AR-powered Tourist Guide"
@@ -122,11 +112,9 @@ export type Present = {
     | "Predictive Healthcare Analytics";
   leader: string;
   judge: string;
-  generation: string;
   no: number;
   score: number;
   complete: number;
-  
   judge1: string;
   judge2: string;
   judge3: string;
@@ -163,7 +151,7 @@ export const columns: ColumnDef<Present>[] = [
   },
 
   {
-    accessorKey: "department",
+    accessorKey: "projectName",
     header: () => (
       <div className="text-start hidden md:block w-full font-bold text-black text-lg">
         Project Name
@@ -171,7 +159,7 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => (
       <div className="capitalize text-start text-base font-medium">
-        {row.getValue("department")}
+        {row.getValue("projectName")}
       </div>
     ),
   },
@@ -217,8 +205,6 @@ export const columns: ColumnDef<Present>[] = [
                 <DropdownMenuItem>{row.getValue("judge2")}</DropdownMenuItem>
                 <DropdownMenuItem>{row.getValue("judge3")}</DropdownMenuItem>
                 <DropdownMenuItem>{row.getValue("judge4")}</DropdownMenuItem>
-
-                
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -250,7 +236,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "judge1",
     header: () => {},
-    cell: () => {}
+    cell: () => {},
   },
   {
     accessorKey: "complete",
@@ -264,19 +250,18 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "judge2",
     header: () => {},
-    cell: () => {}
+    cell: () => {},
   },
-  
-  
+
   {
     accessorKey: "judge3",
     header: () => {},
-    cell: () => {}
+    cell: () => {},
   },
   {
     accessorKey: "judge4",
     header: () => {},
-    cell: () => {}
+    cell: () => {},
   },
 ];
 
@@ -310,100 +295,85 @@ export default function ProjectsForm() {
 
   return (
     <div className="flex justify-center w-full items-center">
-      <div className="present ">
-      
-        <Card className=" w-full rounded-t-none border-none">
-          <CardContent className="">
-            <div className="flex justify-center">
-              <div className="w-full">
-                <div className="flex items-center md:mb-5">
-                  <DropdownMenu>
-                    <DropdownMenuContent align="end">
-                      {table
-                        .getAllColumns()
-                        .filter((column) => column.getCanHide())
-                        .map((column) => {
+      <Card className=" w-full rounded-t-none border-none">
+        <CardContent>
+          <div className="flex justify-center">
+            <div className="w-full">
+              <div className="flex items-center md:mb-5">
+                <DropdownMenu>
+                  <DropdownMenuContent align="end">
+                    {table
+                      .getAllColumns()
+                      .filter((column) => column.getCanHide())
+                      .map((column) => {
+                        return (
+                          <DropdownMenuCheckboxItem
+                            key={column.id}
+                            className="capitalize"
+                            checked={column.getIsVisible()}
+                            onCheckedChange={(value) =>
+                              column.toggleVisibility(value)
+                            }
+                          >
+                            {column.id}
+                          </DropdownMenuCheckboxItem>
+                        );
+                      })}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+              <div className="md:mt-[-20px] mt-[-35px]">
+                <Table className="border-2 ">
+                  <TableHeader className="bg-gray-300">
+                    {table.getHeaderGroups().map((headerGroup) => (
+                      <TableRow className="" key={headerGroup.id}>
+                        {headerGroup.headers.map((header) => {
                           return (
-                            <DropdownMenuCheckboxItem
-                              key={column.id}
-                              className="capitalize"
-                              checked={column.getIsVisible()}
-                              onCheckedChange={(value) =>
-                                column.toggleVisibility(value)
-                              }
-                            >
-                              {column.id}
-                            </DropdownMenuCheckboxItem>
+                            <TableHead key={header.id}>
+                              {header.isPlaceholder
+                                ? null
+                                : flexRender(
+                                    header.column.columnDef.header,
+                                    header.getContext()
+                                  )}
+                            </TableHead>
                           );
                         })}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-                <div className="md:mt-[-20px] mt-[-35px]">
-                  <Table className="border-2 ">   
-                    <TableHeader className="md:bg-gray-300">
-                      
-                      {table.getHeaderGroups().map((headerGroup) => (
-                        <TableRow className="" key={headerGroup.id}>
-                          {headerGroup.headers.map((header) => {
-                            return (
-                              <TableHead key={header.id}>
-                                {header.isPlaceholder
-                                  ? null
-                                  : flexRender(
-                                      header.column.columnDef.header,
-                                      header.getContext()
-                                    )}
-                              </TableHead>
-                            );
-                          })}
+                      </TableRow>
+                    ))}
+                  </TableHeader>
+                  <TableBody>
+                    {table.getRowModel().rows?.length ? (
+                      table.getRowModel().rows.map((row) => (
+                        <TableRow
+                          key={row.id}
+                          data-state={row.getIsSelected() && "selected"}
+                          className={`overflow-hidden ${
+                            row.getValue("complete") === 1 ? "bg-green-200" : ""
+                          } ${
+                            row.getValue("complete") == 2 ? "bg-yellow-200" : ""
+                          }`}
+                        >
+                          {row.getVisibleCells().map((cell) => (
+                            <TableCell key={cell.id}>
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext()
+                              )}
+                            </TableCell>
+                          ))}
                         </TableRow>
-                      ))}
-                    </TableHeader>
-                    <TableBody className="test hover:">
-                      {table.getRowModel().rows?.length ? (
-                        table.getRowModel().rows.map((row) => (
-                          <TableRow
-                            key={row.id}
-                            data-state={row.getIsSelected() && "selected"}
-                            className={`overflow-hidden ${
-                              row.getValue("complete") === 1
-                                ? "bg-green-200"
-                                : ""
-                            } ${
-                              row.getValue("complete") == 2
-                                ? "bg-yellow-200"
-                                : ""
-                            }`}
-                          >
-                            {row.getVisibleCells().map((cell) => (
-                              <TableCell key={cell.id}>
-                                {flexRender(
-                                  cell.column.columnDef.cell,
-                                  cell.getContext()
-                                )}
-                              </TableCell>
-                            ))}
-                          </TableRow>
-                        ))
-                      ) : (
-                        <TableRow>
-                          <TableCell
-                            colSpan={columns.length}
-                            className="h-24 text-center"
-                          >
-                            No results.
-                          </TableCell>
-                        </TableRow>
-                      )}
-                    </TableBody>
-                  </Table>
-                </div>
+                      ))
+                    ) : (
+                      <TableRow></TableRow>
+                    )}
+                  </TableBody>
+                </Table>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
