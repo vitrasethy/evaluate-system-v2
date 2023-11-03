@@ -40,6 +40,11 @@ export function Hamburger() {
           aria-labelledby="dropdownDefaultButton"
         >
           <li>
+            <a href="/award" className="block px-4 py-2">
+              Award
+            </a>
+          </li>
+          <li>
             <a href="/e-day/1/1/evaluate" className="block px-4 py-2">
               My Evaluation
             </a>
