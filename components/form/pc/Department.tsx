@@ -34,34 +34,40 @@ import Link from "next/link";
 
 const data: Department[] = [
   {
+    id: 1,
     year: 1,
     department: "Automation Engineering",
     generation: "8",
   },
   {
+    id: 2,
     year: 2,
     department: "Bio Engineering",
     generation: "6",
   },
   {
+    id: 3,
     year: 3,
     department: "Environmental Engineering",
     generation: "7",
   },
   {
+    id: 4,
     year: 4,
     department: "Information Technology Engineering",
     generation: "5",
   },
   {
+    id: 5,
     year: 5,
     department: "Telecommunication & Electric Engineering",
     generation: "8",
   },
 ];
 export type Department = {
-  year: number;
-  department:
+    id: number;
+    year: number;
+    department:
     | "Automation Engineering"
     | "Bio Engineering"
     | "Environmental Engineering"
