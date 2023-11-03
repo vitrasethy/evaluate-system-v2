@@ -19,7 +19,7 @@ export default function Navbar() {
               className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
               href={"/award"}
             >
-             Award
+             Result
             </Link>
             <Link
               className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
