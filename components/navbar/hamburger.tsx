@@ -12,7 +12,7 @@ import {
 // type Checked = DropdownMenuCheckboxItemProps["checked"];
 
 export function Hamburger() {
-  // const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
+// const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
   // const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
   // const [showPanel, setShowPanel] = React.useState<Checked>(false);
 
