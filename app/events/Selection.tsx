@@ -1,5 +1,4 @@
 "use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SetStateAction, useState } from "react";
 import Link from "next/link";
@@ -86,7 +85,7 @@ export default function Selection() {
       <div className={"flex justify-center mb-6"}>
         <Link
           href={{
-            pathname: "/events/e-day",
+            pathname: "/events/projects",
             query: {
               event: hookEvent,
               department: hookDepartment,
