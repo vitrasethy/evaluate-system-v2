@@ -28,8 +28,6 @@ export default function Page() {
           Year 3
         </p>
       </div>
-      {/* </div> */}
-
       <div className="hidden lg:block">
         <ProjectsForm />
       </div>

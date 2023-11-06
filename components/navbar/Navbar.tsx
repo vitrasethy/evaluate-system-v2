@@ -1,10 +1,12 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hamburger from "./Hamburger";
+import isAdmin from "@/components/fetchData/isAdmin";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const isAdmins: boolean = await isAdmin();
+  
   return (
     <div className="sticky top-0 bg-[#014164] z-50">
       <div>
@@ -15,17 +17,13 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex justify-around w-2/2 focus:outline-none focus:ring uppercase">
-          <Link
-              className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
-              href={"/award"}
-            >
-             Result
-            </Link>
             <Link
-              className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
-              href={"/events/e-day/1/evaluate"}
+              className={`${
+                isAdmins ? "" : "hidden"
+              } hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring`}
+              href={"/logout"}
             >
-             My Evaluation
+              Result
             </Link>
             <Link
               className=" hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring"
@@ -39,7 +37,7 @@ export default function Navbar() {
           <Link href="/">
             <Image src="/logoFE.webp" alt="" width={50} height={50} />
           </Link>
-          <Hamburger/>
+          <Hamburger />
         </div>
       </div>
     </div>
