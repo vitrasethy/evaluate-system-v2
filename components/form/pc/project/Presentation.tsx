@@ -294,10 +294,10 @@ export default function ProjectsForm() {
   });
 
   return (
-    <div className="flex justify-center w-full items-center">
-      <Card className=" w-full rounded-t-none border-none">
+    <div className="flex justify-center items-center mt-10 ">
+      <Card className="">
         <CardContent>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-5">
             <div className="w-full">
               <div className="flex items-center">
                 <DropdownMenu>

@@ -4,8 +4,8 @@ import ProjectsForm from "@/components/form/pc/project/ProjectsForm";
 export default function Page() {
   return (
     <div>
-      <p className=" text-center text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Engineering Day</p>
-      <h1 className="mt-10 mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <p className=" text-center text-lg font-normal mt-5 text-gray-500 lg:text-xl dark:text-gray-400">Engineering Day</p>
+      <h1 className="mt-5 mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         List of Projects
       </h1>
       <div className=" hidden lg:flex ">
