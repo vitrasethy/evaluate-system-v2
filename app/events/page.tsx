@@ -1,6 +1,10 @@
 import Selection from "@/app/events/Selection";
+import { getDepartments, getEvents } from "@/app/events/fetchData";
 
-export default function page() {
+export default async function page() {
+  const eventsData = await getEvents();
+  const departmentsData = await getDepartments();
+
   return (
     <div>
       <div className={"flex flex-col items-center justify-center my-10"}>
@@ -11,7 +15,7 @@ export default function page() {
           Please select one of each options for searching.
         </p>
       </div>
-      <Selection />
+      <Selection events={eventsData} departments={departmentsData} />
     </div>
   );
 }

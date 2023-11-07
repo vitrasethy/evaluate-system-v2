@@ -59,8 +59,13 @@ export default async function Page() {
               </div>
             </div>
             {data.category.map(
-              (cat: { name: string; weight: string; criteria: any[] }) => (
-                <div>
+              (cat: {
+                id: number;
+                name: string;
+                weight: string;
+                criteria: any[];
+              }) => (
+                <div key={cat.id}>
                   <div className="flex justify-around items-center border-2 border-sky-700 py-4 px-6 bg-[#014164] text-white rounded-md">
                     <h4 className="text-lg font-bold w-1/2 p-2.5">
                       {cat.name}
@@ -70,7 +75,10 @@ export default async function Page() {
                     </h4>
                   </div>
                   {cat.criteria.map((cri) => (
-                    <div className="md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300 ">
+                    <div
+                      key={cri.id}
+                      className="md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300 "
+                    >
                       <div className="md:w-1/2">
                         <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5">
                           {cri.name}
@@ -78,7 +86,7 @@ export default async function Page() {
                       </div>
                       <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                         {cri.score.map((sco: number) => (
-                          <li>
+                          <li key={sco}>
                             <input
                               type="radio"
                               id="number10"
