@@ -19,8 +19,8 @@ export default function SelectDemo() {
           </SelectTrigger>
           <SelectContent className=" ">
            
-              <SelectItem className="h-14 bg-[#014164] hover:bg-[#014190] text-white my-2" value="my evaluate">My Evaluate</SelectItem>
-              <SelectItem className="h-14 bg-[#014164] hover:bg-[#014190] text-white" value="all evaluate">All Evaluate</SelectItem>
+              <SelectItem value="my evaluate">My Evaluate</SelectItem>
+              <SelectItem value="all evaluate">All Evaluate</SelectItem>
 
           </SelectContent>
         </Select>
@@ -31,10 +31,10 @@ export default function SelectDemo() {
           <SelectTrigger className="w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
             <SelectValue placeholder="Presentation" />
           </SelectTrigger>
-          <SelectContent className=" ">
+          <SelectContent>
            
-              <SelectItem className="h-14 bg-[#014164] hover:bg-[#014190] text-white my-2" value="presentain">Presentation</SelectItem>
-              <SelectItem className="h-14 bg-[#014164] hover:bg-[#014190] text-white" value="poster">Poster</SelectItem>
+              <SelectItem value="presentain">Presentation</SelectItem>
+              <SelectItem value="poster">Poster</SelectItem>
 
           </SelectContent>
         </Select>
