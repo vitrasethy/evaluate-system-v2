@@ -1,7 +1,5 @@
-"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SetStateAction, useState } from "react";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const data = {
   year: [
@@ -30,36 +28,22 @@ interface SelectionProps {
 }
 
 export default function Selection({ events, departments }: SelectionProps) {
-  const [hookEvent, setHookEvent] = useState("");
-  const [hookDepartment, setHookDepartment] = useState("");
-  const [hookYear, setHookYear] = useState("");
+  async function action(formData: FormData) {
+    "use server";
 
-  const onEventChange = (e: { target: { value: SetStateAction<string> } }) => {
-    setHookEvent(e.target.value);
-  };
-  const onDepartmentChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setHookDepartment(e.target.value);
-  };
-  const onYearChange = (e: { target: { value: SetStateAction<string> } }) => {
-    setHookYear(e.target.value);
-  };
+    const selectDepartment = formData.get("department");
+    const selectEvent = formData.get("event");
+    const selectYear = formData.get("year");
+
+    redirect(
+      `/events/projects?event=${selectEvent}&department=${selectDepartment}&year=${selectYear}`,
+    );
+  }
 
   return (
-    <div className={"mb-3"}>
+    <form action={action} className={"mb-3"}>
       <div className={"flex justify-center mb-6"}>
-        <Link
-          href={{
-            pathname: "/events/projects",
-            query: {
-              event: hookEvent,
-              department: hookDepartment,
-              year: hookYear,
-            },
-          }}
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
-        >
+        <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
           Search
           <svg
             className="w-3.5 h-3.5 ml-2"
@@ -76,7 +60,7 @@ export default function Selection({ events, departments }: SelectionProps) {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </Link>
+        </button>
       </div>
       <div className={"flex justify-center gap-4"}>
         <Card className={"w-[30%]"}>
@@ -92,7 +76,6 @@ export default function Selection({ events, departments }: SelectionProps) {
                     id={event.name_latin}
                     name="event"
                     value={event.id}
-                    onChange={onEventChange}
                     className="hidden peer"
                     required
                   />
@@ -124,7 +107,6 @@ export default function Selection({ events, departments }: SelectionProps) {
                     id={department.name_latin}
                     name="department"
                     value={department.id}
-                    onChange={onDepartmentChange}
                     className="hidden peer"
                     required
                   />
@@ -155,8 +137,7 @@ export default function Selection({ events, departments }: SelectionProps) {
                     type="radio"
                     id={years.name}
                     name="year"
-                    value={years.name}
-                    onChange={onYearChange}
+                    value={years.id}
                     className="hidden peer"
                     required
                   />
@@ -176,6 +157,6 @@ export default function Selection({ events, departments }: SelectionProps) {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </form>
   );
 }
