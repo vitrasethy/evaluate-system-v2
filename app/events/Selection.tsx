@@ -1,48 +1,7 @@
-"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SetStateAction, useState } from "react";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const data = {
-  events: [
-    {
-      id: 1,
-      name: "Engineering's Day",
-      shortname: "eDay",
-    },
-    {
-      id: 2,
-      name: "Event 2",
-      shortname: "EV2",
-    },
-    {
-      id: 3,
-      name: "Event 3",
-      shortname: "EV3",
-    },
-  ],
-  departments: [
-    {
-      id: 1,
-      name: "Information Technology Engineering",
-      shortname: "ite",
-    },
-    {
-      id: 2,
-      name: "Bio Engineering",
-      shortname: "be",
-    },
-    {
-      id: 3,
-      name: "Telecommunication & Electric Engineering",
-      shortname: "tee",
-    },
-    {
-      id: 4,
-      name: "Environmental Engineering",
-      shortname: "ee",
-    },
-  ],
   year: [
     {
       id: 1,
@@ -63,37 +22,28 @@ const data = {
   ],
 };
 
-export default function Selection() {
-  const [hookEvent, setHookEvent] = useState("");
-  const [hookDepartment, setHookDepartment] = useState("");
-  const [hookYear, setHookYear] = useState("");
+interface SelectionProps {
+  events: any;
+  departments: any;
+}
 
-  const onEventChange = (e: { target: { value: SetStateAction<string> } }) => {
-    setHookEvent(e.target.value);
-  };
-  const onDepartmentChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setHookDepartment(e.target.value);
-  };
-  const onYearChange = (e: { target: { value: SetStateAction<string> } }) => {
-    setHookYear(e.target.value);
-  };
+export default function Selection({ events, departments }: SelectionProps) {
+  async function action(formData: FormData) {
+    "use server";
+
+    const selectDepartment = formData.get("department");
+    const selectEvent = formData.get("event");
+    const selectYear = formData.get("year");
+
+    redirect(
+      `/events/projects?event=${selectEvent}&department=${selectDepartment}&year=${selectYear}`,
+    );
+  }
 
   return (
-    <div>
+    <form action={action} className={"mb-3"}>
       <div className={"flex justify-center mb-6"}>
-        <Link
-          href={{
-            pathname: "/events/projects",
-            query: {
-              event: hookEvent,
-              department: hookDepartment,
-              year: hookYear,
-            },
-          }}
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
-        >
+        <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
           Search
           <svg
             className="w-3.5 h-3.5 ml-2"
@@ -110,7 +60,7 @@ export default function Selection() {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </Link>
+        </button>
       </div>
       <div className={"flex justify-center gap-4"}>
         <Card className={"w-[30%]"}>
@@ -119,24 +69,23 @@ export default function Selection() {
           </CardHeader>
           <CardContent>
             <ul className="">
-              {data.events.map((event) => (
+              {events.map((event: any) => (
                 <li key={event.id} className={"mb-2"}>
                   <input
                     type="radio"
-                    id={event.name}
+                    id={event.name_latin}
                     name="event"
-                    value={event.name}
-                    onChange={onEventChange}
+                    value={event.id}
                     className="hidden peer"
                     required
                   />
                   <label
-                    htmlFor={event.name}
+                    htmlFor={event.name_latin}
                     className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                   >
                     <div className="block">
                       <div className="w-full text-lg font-semibold">
-                        {event.name}
+                        {event.name_latin}
                       </div>
                     </div>
                   </label>
@@ -151,24 +100,23 @@ export default function Selection() {
           </CardHeader>
           <CardContent>
             <ul className="">
-              {data.departments.map((department) => (
+              {departments.map((department: any) => (
                 <li key={department.id} className={"mb-2"}>
                   <input
                     type="radio"
-                    id={department.name}
+                    id={department.name_latin}
                     name="department"
-                    value={department.name}
-                    onChange={onDepartmentChange}
+                    value={department.id}
                     className="hidden peer"
                     required
                   />
                   <label
-                    htmlFor={department.name}
+                    htmlFor={department.name_latin}
                     className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                   >
                     <div className="block">
                       <div className="w-full text-lg font-semibold">
-                        {department.name}
+                        {department.name_latin}
                       </div>
                     </div>
                   </label>
@@ -189,8 +137,7 @@ export default function Selection() {
                     type="radio"
                     id={years.name}
                     name="year"
-                    value={years.name}
-                    onChange={onYearChange}
+                    value={years.id}
                     className="hidden peer"
                     required
                   />
@@ -210,6 +157,6 @@ export default function Selection() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </form>
   );
 }
