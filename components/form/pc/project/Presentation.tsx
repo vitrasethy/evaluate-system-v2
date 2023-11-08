@@ -5,14 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ColumnDef,
   ColumnFiltersState,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  SortingState,
   useReactTable,
+  VisibilityState,
 } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 
@@ -124,9 +124,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "no",
     header: () => (
-      <div className="text-center w-full font-bold text-black text-lg">
-        No
-      </div>
+      <div className="text-center w-full font-bold text-black text-lg">No</div>
     ),
     cell: ({ row }) => {
       const no = parseFloat(row.getValue("no"));
@@ -137,9 +135,7 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "id",
     header: () => (
-      <div className="text-start w-full font-bold text-black text-lg">
-        ID
-      </div>
+      <div className="text-start w-full font-bold text-black text-lg">ID</div>
     ),
     cell: ({ row }) => {
       return (
@@ -243,7 +239,7 @@ export const columns: ColumnDef<Present>[] = [
     header: () => {},
     cell: () => (
       <div className=" text-center text-base ">
-        <Link href="/events/e-day/1/evaluate">Evaluate</Link>
+        <Link href={"/events/projects/1/evaluate"}>Evaluate</Link>
       </div>
     ),
   },
@@ -268,7 +264,7 @@ export const columns: ColumnDef<Present>[] = [
 export default function ProjectsForm() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
+    [],
   );
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
@@ -334,7 +330,7 @@ export default function ProjectsForm() {
                                 ? null
                                 : flexRender(
                                     header.column.columnDef.header,
-                                    header.getContext()
+                                    header.getContext(),
                                   )}
                             </TableHead>
                           );
@@ -358,7 +354,7 @@ export default function ProjectsForm() {
                             <TableCell key={cell.id}>
                               {flexRender(
                                 cell.column.columnDef.cell,
-                                cell.getContext()
+                                cell.getContext(),
                               )}
                             </TableCell>
                           ))}
