@@ -1,14 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import fetchData from "@/app/events/projects/evaluate/fetchData";
-function isOneDigit({sco}: any): boolean {
-  if (sco<10) {
-    return true;
-  }
-  else{
-    return false;
-  }
- }
+
+function isOneDigit({ sco }: any): boolean {
+  return sco < 10;
+}
+
 export default async function Page() {
   const data = await fetchData();
 
@@ -96,15 +93,17 @@ export default async function Page() {
                           <li key={sco}>
                             <input
                               type="radio"
-                              id="number10"
-                              name="hosting"
-                              value="10"
+                              id={sco.toString() + cri.name}
+                              name={cri.name}
+                              value={sco}
                               className="hidden peer"
                               required
                             />
                             <label
-                              htmlFor="number10"
-                              className={`${isOneDigit({sco})? "px-4 py-3" : "p-3"} text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer `}
+                              htmlFor={sco.toString() + cri.name}
+                              className={`${
+                                isOneDigit({ sco }) ? "px-4 py-3" : "p-3"
+                              } text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer `}
                             >
                               {sco}
                             </label>
