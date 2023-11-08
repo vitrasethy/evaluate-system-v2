@@ -1,7 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import fetchData from "@/app/events/projects/evaluate/fetchData";
-
+function isOneDigit({sco}: any): boolean {
+  if (sco<10) {
+    return true;
+  }
+  else{
+    return false;
+  }
+ }
 export default async function Page() {
   const data = await fetchData();
 
@@ -97,7 +104,7 @@ export default async function Page() {
                             />
                             <label
                               htmlFor="number10"
-                              className=" p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer"
+                              className={`${isOneDigit({sco})? "px-4 py-3" : "p-3"} text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer `}
                             >
                               {sco}
                             </label>
