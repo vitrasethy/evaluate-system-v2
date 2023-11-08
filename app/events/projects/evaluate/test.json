@@ -1,0 +1,19 @@
+{
+  "project_id": 12,
+  "committee_id": 11,
+  "comment": "Nice work.",
+  "result": [
+    {
+      "criteria_id": 1,
+      "score": 7
+    },
+    {
+      "criteria_id": 2,
+      "score": 10
+    },
+    {
+      "criteria_id": 3,
+      "score": 5
+    }
+  ]
+}
