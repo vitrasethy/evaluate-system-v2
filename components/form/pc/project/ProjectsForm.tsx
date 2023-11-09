@@ -11,7 +11,7 @@ import {
 export default function SelectDemo() {
   return (
     <div className="border-2 flex flex-col mx-auto w-[80%] rounded-lg">
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-5 mb-1">
         {/* my evaluate */}
         <div className="mx-10">
           <Select>
