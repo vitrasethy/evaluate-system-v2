@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { redirect } from "next/navigation";
-import { cookies } from 'next/headers'
+import { cookies } from "next/headers";
 
 const data = {
   year: [
@@ -36,13 +36,12 @@ export default function Selection({ events, departments }: SelectionProps) {
       department: formData.get("department"),
       year: formData.get("year"),
     };
-    }
 
-    // cookies().set('department', data['department'])
-    // cookies().set('year', selectYear ?? '')
-
+    cookies().set("department", data.toString() ?? "");
+    cookies().set("year", data.toString() ?? "");
     redirect("/home/events/projects");
   }
+
 
   return (
     <form action={action} className={"mb-3"}>
