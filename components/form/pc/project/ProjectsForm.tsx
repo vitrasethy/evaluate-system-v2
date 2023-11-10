@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectsForm from "@/components/form/pc/project/Presentation";
+import Presentations from "@/components/form/pc/project/Presentations";
 import React, { useEffect, useState } from "react";
 import {
   Select,
@@ -60,7 +60,7 @@ export default function SelectDemo() {
         </div>
       </div>
       <div className="">
-        <ProjectsForm
+        <Presentations
           data_data={data}
           projectType={type}
           projectAmount={amount}
