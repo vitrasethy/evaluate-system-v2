@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
-import FormButton from "@/app/events/projects/evaluate/FormButton";
-import { action } from "@/app/events/projects/evaluate/action";
+import FormButton from "@/app/home/events/projects/evaluate/FormButton";
+import { action } from "@/app/home/events/projects/evaluate/action";
 import { useSearchParams } from "next/navigation";
 
 function isOneDigit({ sco }: any): boolean {

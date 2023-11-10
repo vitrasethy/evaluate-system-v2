@@ -1,6 +1,6 @@
-import Selection from "@/app/events/Selection";
-import { getDepartments, getEvents } from "@/app/events/fetchData";
-import SelectionMobile from "@/app/events/SelectionMobile";
+import Selection from "@/app/home/events/Selection";
+import { getDepartments, getEvents } from "@/app/home/events/fetchData";
+import SelectionMobile from "@/app/home/events/SelectionMobile";
 
 export default async function page() {
   const eventsData = await getEvents();

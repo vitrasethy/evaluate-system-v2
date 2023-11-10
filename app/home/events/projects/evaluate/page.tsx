@@ -1,6 +1,6 @@
 import React from "react";
-import fetchData from "@/app/events/projects/evaluate/fetchData";
-import EvaluateForm from "@/app/events/projects/evaluate/EvaluateForm";
+import fetchData from "@/app/home/events/projects/evaluate/fetchData";
+import EvaluateForm from "@/app/home/events/projects/evaluate/EvaluateForm";
 
 export default async function Page() {
   const data = await fetchData();

@@ -21,7 +21,7 @@ export default async function Navbar() {
               className={`${
                 isAdmins ? "" : "hidden"
               } hover:bg-white hover:text-black px-5 py-6 transition ease-in-out delay-50 focus:outline-none focus:ring`}
-              href={"/logout"}
+              href={"/award"}
             >
               Result
             </Link>

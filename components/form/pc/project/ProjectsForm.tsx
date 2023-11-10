@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectsForm from "@/components/form/pc/project/Presentation";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {useEffect} from "react";
 
 export default function SelectDemo() {
   const [data, setData] = useState([]);
@@ -19,10 +18,10 @@ export default function SelectDemo() {
   useEffect(() => {
     fetch("/api").then((res) => {
       res.json().then((d) => {
-        setData(d.transData)
-      })
-    })
-  }, [data])
+        setData(d.transData);
+      });
+    });
+  }, [data]);
 
   return (
     <div>
@@ -33,7 +32,11 @@ export default function SelectDemo() {
             <SelectTrigger className="w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="My Evaluation" />
             </SelectTrigger>
-            <SelectContent onChange={event => setAmount((event.target as HTMLInputElement).value)}>
+            <SelectContent
+              onChange={(event) =>
+                setAmount((event.target as HTMLInputElement).value)
+              }
+            >
               <SelectItem value="my evaluate">My Evaluate</SelectItem>
               <SelectItem value="all evaluate">All Evaluate</SelectItem>
             </SelectContent>
@@ -45,15 +48,23 @@ export default function SelectDemo() {
             <SelectTrigger className="w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="Presentation" />
             </SelectTrigger>
-            <SelectContent onChange={event => setType((event.target as HTMLInputElement).value)}>
-              <SelectItem value="1">Presentation</SelectItem>
+            <SelectContent
+              onChange={(event) =>
+                setType((event.target as HTMLInputElement).value)
+              }
+            >
+              <SelectItem value="Prsentation">Presentation</SelectItem>
               <SelectItem value="2">Poster</SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
       <div className="">
-        <ProjectsForm data_data={data} />
+        <ProjectsForm
+          data_data={data}
+          projectType={type}
+          projectAmount={amount}
+        />
       </div>
     </div>
   );
