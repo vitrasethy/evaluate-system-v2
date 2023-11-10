@@ -28,6 +28,6 @@ export function middleware(request: NextRequest) {
   }
 
   if (request.nextUrl.pathname === "/" && hasCookie) {
-    return NextResponse.rewrite(new URL("/events", request.url));
+    return NextResponse.rewrite(new URL("/home/events", request.url));
   }
 }
