@@ -1,22 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { redirect } from "next/navigation";
+import { cookies } from 'next/headers'
 
 const data = {
   year: [
     {
-      id: 1,
+      id: "Year1",
       name: "Year 1",
     },
     {
-      id: 2,
+      id: "Year2",
       name: "Year 2",
     },
     {
-      id: 3,
+      id: "Year3",
       name: "Year 3",
     },
     {
-      id: 4,
+      id: "Year4",
       name: "Year 4",
     },
   ],
@@ -32,74 +33,24 @@ export default function Selection({ events, departments }: SelectionProps) {
     "use server";
 
     const selectDepartment = formData.get("department");
-    const selectEvent = formData.get("event");
     const selectYear = formData.get("year");
 
-    redirect(
-      `/events/projects?event=${selectEvent}&department=${selectDepartment}&year=${selectYear}`,
-    );
+
+    // cookies().set('department', selectDepartment)
+    // cookies().set('year', selectYear ?? '')
+
+    redirect("/home/events/projects");
   }
 
   return (
     <form action={action} className={"mb-3"}>
-      <div className={"flex justify-center mb-6"}>
-        <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
-          Search
-          <svg
-            className="w-3.5 h-3.5 ml-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </button>
-      </div>
       <div className={"flex justify-center gap-4"}>
-        <Card className={"w-[30%]"}>
-          <CardHeader>
-            <CardTitle>Select Events</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="">
-              {events.map((event: any) => (
-                <li key={event.id} className={"mb-2"}>
-                  <input
-                    type="radio"
-                    id={event.name_latin}
-                    name="event"
-                    value={event.id}
-                    className="hidden peer"
-                    required
-                  />
-                  <label
-                    htmlFor={event.name_latin}
-                    className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div className="block">
-                      <div className="w-full text-lg font-semibold">
-                        {event.name_latin}
-                      </div>
-                    </div>
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-        <Card className={"w-[30%]"}>
+        <Card className="w-[35%]">
           <CardHeader>
             <CardTitle>Select Departments</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="">
+            <ul>
               {departments.map((department: any) => (
                 <li key={department.id} className={"mb-2"}>
                   <input
@@ -125,7 +76,7 @@ export default function Selection({ events, departments }: SelectionProps) {
             </ul>
           </CardContent>
         </Card>
-        <Card className={"w-[30%]"}>
+        <Card className={"w-[35%]"}>
           <CardHeader>
             <CardTitle>Select Year</CardTitle>
           </CardHeader>
@@ -156,6 +107,26 @@ export default function Selection({ events, departments }: SelectionProps) {
             </ul>
           </CardContent>
         </Card>
+      </div>
+      <div className={"flex justify-center my-6"}>
+        <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+          Search
+          <svg
+            className="w-3.5 h-3.5 ml-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
       </div>
     </form>
   );
