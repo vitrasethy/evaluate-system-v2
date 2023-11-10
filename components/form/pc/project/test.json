@@ -1,0 +1,329 @@
+[
+  {
+    "id": 1,
+    "eve_event": [
+      {
+        "id": 1,
+        "name_latin": "Engineering Day",
+        "name_khmer": "បុណ្យវិស្វកម្ម",
+        "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+        "start_date": "2023-12-09T07:00:00",
+        "end_date": "2023-12-09T17:00:00",
+        "photo_url": "null",
+        "created_by": 1,
+        "created_at": "2023-11-04T14:09:11",
+        "updated_by": 1,
+        "updated_at": "2023-11-04T14:09:11"
+      }
+    ],
+    "eve_project": [
+      {
+        "id": 1,
+        "code": "ITE001",
+        "eve_event": [
+          {
+            "id": 1,
+            "name_latin": "Engineering Day",
+            "name_khmer": "បុណ្យវិស្វកម្ម",
+            "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+            "start_date": "2023-12-09T07:00:00",
+            "end_date": "2023-12-09T17:00:00",
+            "photo_url": "null",
+            "created_by": 1,
+            "created_at": "2023-11-04T14:09:11",
+            "updated_by": 1,
+            "updated_at": "2023-11-04T14:09:11"
+          }
+        ],
+        "sys_department": [
+          {
+            "id": 1,
+            "name_latin": "IT Engineering",
+            "name_khmer": "ដេប៉ាតឺម៉ង់វិស្វកម្មបច្ចេកវិទ្យាព័ត៌មាន",
+            "created_by": 1,
+            "created_at": "2023-10-26T20:19:43",
+            "updated_by": 1,
+            "updated_at": "2023-10-26T20:19:43"
+          }
+        ],
+        "topic": "Face Scanner",
+        "eve_project_type": [
+          {
+            "id": 1,
+            "name_latin": "Prsentation",
+            "eve_event_id": 1,
+            "created_by": 1,
+            "created_at": "2023-11-07T11:43:13",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:43:13"
+          }
+        ],
+        "eve_generation_id": 3,
+        "eve_generation": [
+          {
+            "id": 3,
+            "eve_event_id": 1,
+            "sys_department_id": 1,
+            "name_latin": "G8",
+            "year": "Year2",
+            "created_by": 1,
+            "created_at": "2023-11-07T11:52:35",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:52:35"
+          }
+        ],
+        "member1_name_latin": "Sunneng Zinll",
+        "member1_name_khmer": "Sunneng Zinll",
+        "member2_name_latin": "Vitra Zinll",
+        "member2_name_khmer": "Vitra Zinll",
+        "member3_name_latin": "Veha Zinll",
+        "member3_name_khmer": "Veha Zinll",
+        "member4_name_latin": "MeySorng Bek Zer",
+        "member4_name_khmer": "Meysorng Bek Zer",
+        "member5_name_latin": "Zin ll",
+        "member5_name_khmer": "Zin ll",
+        "eve_supervisor_id": 1,
+        "contact_name": "Zinll",
+        "telegram_number": "0987432",
+        "email_address": "poiuytrewq",
+        "created_by": 1,
+        "created_at": "2023-11-08T01:30:28.358000",
+        "updated_by": 1,
+        "updated_at": "2023-11-08T01:30:28.358000"
+      }
+    ],
+    "eve_project_type": [
+      {
+        "id": 1,
+        "name_latin": "Prsentation",
+        "eve_event_id": 1,
+        "created_by": 1,
+        "created_at": "2023-11-07T11:43:13",
+        "updated_by": 1,
+        "updated_at": "2023-11-07T11:43:13"
+      }
+    ],
+    "created_by": 1,
+    "created_at": "2023-11-08T10:05:23",
+    "updated_by": 1,
+    "updated_at": "2023-11-08T10:05:23"
+  },
+  {
+    "id": 2,
+    "eve_event": [
+      {
+        "id": 1,
+        "name_latin": "Engineering Day",
+        "name_khmer": "បុណ្យវិស្វកម្ម",
+        "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+        "start_date": "2023-12-09T07:00:00",
+        "end_date": "2023-12-09T17:00:00",
+        "photo_url": "null",
+        "created_by": 1,
+        "created_at": "2023-11-04T14:09:11",
+        "updated_by": 1,
+        "updated_at": "2023-11-04T14:09:11"
+      }
+    ],
+    "eve_project": [
+      {
+        "id": 2,
+        "code": "ITE002",
+        "eve_event": [
+          {
+            "id": 1,
+            "name_latin": "Engineering Day",
+            "name_khmer": "បុណ្យវិស្វកម្ម",
+            "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+            "start_date": "2023-12-09T07:00:00",
+            "end_date": "2023-12-09T17:00:00",
+            "photo_url": "null",
+            "created_by": 1,
+            "created_at": "2023-11-04T14:09:11",
+            "updated_by": 1,
+            "updated_at": "2023-11-04T14:09:11"
+          }
+        ],
+        "sys_department": [
+          {
+            "id": 1,
+            "name_latin": "IT Engineering",
+            "name_khmer": "ដេប៉ាតឺម៉ង់វិស្វកម្មបច្ចេកវិទ្យាព័ត៌មាន",
+            "created_by": 1,
+            "created_at": "2023-10-26T20:19:43",
+            "updated_by": 1,
+            "updated_at": "2023-10-26T20:19:43"
+          }
+        ],
+        "topic": "Website",
+        "eve_project_type": [
+          {
+            "id": 1,
+            "name_latin": "Prsentation",
+            "eve_event_id": 1,
+            "created_by": 1,
+            "created_at": "2023-11-07T11:43:13",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:43:13"
+          }
+        ],
+        "eve_generation_id": 3,
+        "eve_generation": [
+          {
+            "id": 3,
+            "eve_event_id": 1,
+            "sys_department_id": 1,
+            "name_latin": "G8",
+            "year": "Year2",
+            "created_by": 1,
+            "created_at": "2023-11-07T11:52:35",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:52:35"
+          }
+        ],
+        "member1_name_latin": "G8",
+        "member1_name_khmer": "G8",
+        "member2_name_latin": "G8",
+        "member2_name_khmer": "G8",
+        "member3_name_latin": "G8",
+        "member3_name_khmer": "G8",
+        "member4_name_latin": "G8",
+        "member4_name_khmer": "G8",
+        "member5_name_latin": "G8",
+        "member5_name_khmer": "G8",
+        "eve_supervisor_id": 1,
+        "contact_name": "G8",
+        "telegram_number": "123456789",
+        "email_address": "3457234",
+        "created_by": 1,
+        "created_at": "2023-11-08T01:30:28.358000",
+        "updated_by": 1,
+        "updated_at": "2023-11-08T01:30:28.358000"
+      }
+    ],
+    "eve_project_type": [
+      {
+        "id": 1,
+        "name_latin": "Prsentation",
+        "eve_event_id": 1,
+        "created_by": 1,
+        "created_at": "2023-11-07T11:43:13",
+        "updated_by": 1,
+        "updated_at": "2023-11-07T11:43:13"
+      }
+    ],
+    "created_by": 1,
+    "created_at": "2023-11-08T10:05:23",
+    "updated_by": 1,
+    "updated_at": "2023-11-08T10:05:23"
+  },
+  {
+    "id": 5,
+    "eve_event": [
+      {
+        "id": 1,
+        "name_latin": "Engineering Day",
+        "name_khmer": "បុណ្យវិស្វកម្ម",
+        "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+        "start_date": "2023-12-09T07:00:00",
+        "end_date": "2023-12-09T17:00:00",
+        "photo_url": "null",
+        "created_by": 1,
+        "created_at": "2023-11-04T14:09:11",
+        "updated_by": 1,
+        "updated_at": "2023-11-04T14:09:11"
+      }
+    ],
+    "eve_project": [
+      {
+        "id": 5,
+        "code": "ITE003",
+        "eve_event": [
+          {
+            "id": 1,
+            "name_latin": "Engineering Day",
+            "name_khmer": "បុណ្យវិស្វកម្ម",
+            "description": "The objectives of the RUPP Engineering Day are to promote engineering studentsʼ creativity and innovation through research and development project competition, to acknowledge outstanding students of the year, and to recognize students involving in social activities.",
+            "start_date": "2023-12-09T07:00:00",
+            "end_date": "2023-12-09T17:00:00",
+            "photo_url": "null",
+            "created_by": 1,
+            "created_at": "2023-11-04T14:09:11",
+            "updated_by": 1,
+            "updated_at": "2023-11-04T14:09:11"
+          }
+        ],
+        "sys_department": [
+          {
+            "id": 1,
+            "name_latin": "IT Engineering",
+            "name_khmer": "ដេប៉ាតឺម៉ង់វិស្វកម្មបច្ចេកវិទ្យាព័ត៌មាន",
+            "created_by": 1,
+            "created_at": "2023-10-26T20:19:43",
+            "updated_by": 1,
+            "updated_at": "2023-10-26T20:19:43"
+          }
+        ],
+        "topic": "Watering System",
+        "eve_project_type": [
+          {
+            "id": 1,
+            "name_latin": "Prsentation",
+            "eve_event_id": 1,
+            "created_by": 1,
+            "created_at": "2023-11-07T11:43:13",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:43:13"
+          }
+        ],
+        "eve_generation_id": 3,
+        "eve_generation": [
+          {
+            "id": 3,
+            "eve_event_id": 1,
+            "sys_department_id": 1,
+            "name_latin": "G8",
+            "year": "Year2",
+            "created_by": 1,
+            "created_at": "2023-11-07T11:52:35",
+            "updated_by": 1,
+            "updated_at": "2023-11-07T11:52:35"
+          }
+        ],
+        "member1_name_latin": "Ben",
+        "member1_name_khmer": "Ben",
+        "member2_name_latin": "Nancy",
+        "member2_name_khmer": "Nancy",
+        "member3_name_latin": "Lucy",
+        "member3_name_khmer": "Lucy",
+        "member4_name_latin": "Panha",
+        "member4_name_khmer": "Panha",
+        "member5_name_latin": "Nihong",
+        "member5_name_khmer": "Nihong",
+        "eve_supervisor_id": 1,
+        "contact_name": "NA",
+        "telegram_number": "098765432",
+        "email_address": "na@gmail.com",
+        "created_by": 1,
+        "created_at": "2023-11-08T01:30:28.358000",
+        "updated_by": 1,
+        "updated_at": "2023-11-08T01:30:28.358000"
+      }
+    ],
+    "eve_project_type": [
+      {
+        "id": 1,
+        "name_latin": "Prsentation",
+        "eve_event_id": 1,
+        "created_by": 1,
+        "created_at": "2023-11-07T11:43:13",
+        "updated_by": 1,
+        "updated_at": "2023-11-07T11:43:13"
+      }
+    ],
+    "created_by": 1,
+    "created_at": "2023-11-08T01:30:28.358000",
+    "updated_by": 1,
+    "updated_at": "2023-11-08T01:30:28.358000"
+  }
+]

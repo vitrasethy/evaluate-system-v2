@@ -1,7 +1,8 @@
 "use client";
+
 import Link from "next/link";
 import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import {Card, CardContent} from "@/components/ui/card";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -14,10 +15,8 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-
+import {ArrowUpDown} from "lucide-react";
+import {Button} from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -26,82 +25,76 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow,} from "@/components/ui/table";
 
-const data: Present[] = [
-  {
-    no: 1,
-    id: "IG8-4",
-    projectName: "Smart Attendance Tracker",
-    leader: "MeySorng",
-    judge: "4",
-    score: 60,
-    complete: 1,
-    judge1: "Olivia",
-    judge2: "Emma",
-    judge3: "Amelia",
-    judge4: "Sophia",
-  },
-  {
-    no: 2,
-    id: "IG8-3",
-    projectName: "Efficient Inventory Management System",
-    leader: "BongVitra",
-    judge: "4",
-    score: 100,
-    complete: 2,
-    judge1: "Ava",
-    judge2: "Isabella",
-    judge3: "Mia",
-    judge4: "Luna",
-  },
-  {
-    no: 3,
-    id: "IG8-2",
-    projectName: "AR-powered Tourist Guide",
-    leader: "Rithy",
-    judge: "4",
-    score: 50,
-    complete: 3,
-    judge1: "Evelyn",
-    judge2: "Charlotte",
-    judge3: "Sophia",
-    judge4: "Isabella",
-  },
-  {
-    no: 4,
-    id: "IG8-1",
-    projectName: "Interactive Language Learning Platform",
-    leader: "Bong Chhay",
-    judge: "4",
-    score: 98,
-    complete: 2,
-    judge1: "Mia",
-    judge2: "Luna",
-    judge3: "Evelyn",
-    judge4: "Noah",
-  },
-  {
-    no: 5,
-    id: "IG8-3",
-    projectName: "Predictive Healthcare Analytics",
-    leader: "Veha",
-    judge: "4",
-    score: 74,
-    complete: 1,
-    judge1: "Liam",
-    judge2: "Oliver",
-    judge3: "Mateo",
-    judge4: "Elijah",
-  },
-];
+// const data: Present[] = [
+//   {
+//     no: 1,
+//     id: "IG8-4",
+//     projectName: "Smart Attendance Tracker",
+//     leader: "MeySorng",
+//     judge: "4",
+//     score: 60,
+//     complete: 1,
+//     judge1: "Olivia",
+//     judge2: "Emma",
+//     judge3: "Amelia",
+//     judge4: "Sophia",
+//   },
+//   {
+//     no: 2,
+//     id: "IG8-3",
+//     projectName: "Efficient Inventory Management System",
+//     leader: "BongVitra",
+//     judge: "4",
+//     score: 100,
+//     complete: 2,
+//     judge1: "Ava",
+//     judge2: "Isabella",
+//     judge3: "Mia",
+//     judge4: "Luna",
+//   },
+//   {
+//     no: 3,
+//     id: "IG8-2",
+//     projectName: "AR-powered Tourist Guide",
+//     leader: "Rithy",
+//     judge: "4",
+//     score: 50,
+//     complete: 3,
+//     judge1: "Evelyn",
+//     judge2: "Charlotte",
+//     judge3: "Sophia",
+//     judge4: "Isabella",
+//   },
+//   {
+//     no: 4,
+//     id: "IG8-1",
+//     projectName: "Interactive Language Learning Platform",
+//     leader: "Bong Chhay",
+//     judge: "4",
+//     score: 98,
+//     complete: 2,
+//     judge1: "Mia",
+//     judge2: "Luna",
+//     judge3: "Evelyn",
+//     judge4: "Noah",
+//   },
+//   {
+//     no: 5,
+//     id: "IG8-3",
+//     projectName: "Predictive Healthcare Analytics",
+//     leader: "Veha",
+//     judge: "4",
+//     score: 74,
+//     complete: 1,
+//     judge1: "Liam",
+//     judge2: "Oliver",
+//     judge3: "Mateo",
+//     judge4: "Elijah",
+//   },
+// ];
+
 export type Present = {
   id: string;
   projectName:
@@ -120,6 +113,7 @@ export type Present = {
   judge3: string;
   judge4: string;
 };
+
 export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "no",
@@ -261,7 +255,23 @@ export const columns: ColumnDef<Present>[] = [
   },
 ];
 
-export default function ProjectsForm() {
+export default function ProjectsForm({ data_data }: any) {
+  const data: Present[] = data_data.map(
+    (e: { no: any; id: any; projectName: any; leader: any }) => ({
+      no: e.no,
+      id: e.id,
+      projectName: e.projectName,
+      leader: e.leader,
+      judge: "4",
+      score: 60,
+      complete: 1,
+      judge1: "Olivia",
+      judge2: "Emma",
+      judge3: "Amelia",
+      judge4: "Sophia",
+    }),
+  );
+
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
