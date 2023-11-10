@@ -32,16 +32,17 @@ export default function Selection({ events, departments }: SelectionProps) {
   async function action(formData: FormData) {
     "use server";
 
+    const newDepartment = formData.get("department")?.toString();
+
     const data = {
-      department: formData.get("department"),
-      year: formData.get("year"),
+      department: formData.get("department")?.toString(),
+      year: formData.get("year")?.toString(),
     };
 
-    cookies().set("department", data.toString() ?? "");
-    cookies().set("year", data.toString() ?? "");
+    cookies().set("department", data.department ?? "");
+    cookies().set("year", data.year ?? "");
     redirect("/home/events/projects");
   }
-
 
   return (
     <form action={action} className={"mb-3"}>
