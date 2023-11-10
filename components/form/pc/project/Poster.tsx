@@ -208,11 +208,7 @@ export const columns: ColumnDef<Poster>[] = [
     ),
   },
 
-  {
-    accessorKey: "judge1",
-    header: () => {},
-    cell: () => {},
-  },
+  
   {
     accessorKey: "complete",
     header: () => {},
@@ -221,22 +217,6 @@ export const columns: ColumnDef<Poster>[] = [
         <Link href="/events/e-day/1/evaluate">Evaluate</Link>
       </div>
     ),
-  },
-  {
-    accessorKey: "judge2",
-    header: () => {},
-    cell: () => {},
-  },
-
-  {
-    accessorKey: "judge3",
-    header: () => {},
-    cell: () => {},
-  },
-  {
-    accessorKey: "judge4",
-    header: () => {},
-    cell: () => {},
   },
 ];
 
@@ -270,7 +250,7 @@ export default function ProjectsForm() {
 
   return (
     <div className="flex justify-center items-center">
-      <Card className=" rounded-t-none border-0">
+      <Card className=" shadow-none border-none bg-none">
         <CardContent>
           <div className="flex justify-center">
             <div>

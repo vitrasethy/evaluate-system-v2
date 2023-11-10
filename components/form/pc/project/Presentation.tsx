@@ -186,16 +186,7 @@ export const columns: ColumnDef<Present>[] = [
                   {row.getValue("judge")}
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="center"
-                className="bg-gray-50 text-black"
-              >
-                <DropdownMenuLabel>Member</DropdownMenuLabel>
-                <DropdownMenuItem>{row.getValue("judge1")}</DropdownMenuItem>
-                <DropdownMenuItem>{row.getValue("judge2")}</DropdownMenuItem>
-                <DropdownMenuItem>{row.getValue("judge3")}</DropdownMenuItem>
-                <DropdownMenuItem>{row.getValue("judge4")}</DropdownMenuItem>
-              </DropdownMenuContent>
+              
             </DropdownMenu>
           </div>
         </div>
@@ -224,11 +215,6 @@ export const columns: ColumnDef<Present>[] = [
     ),
   },
   {
-    accessorKey: "judge1",
-    header: () => {},
-    cell: () => {},
-  },
-  {
     accessorKey: "complete",
     header: () => {},
     cell: () => (
@@ -237,22 +223,7 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
   },
-  {
-    accessorKey: "judge2",
-    header: () => {},
-    cell: () => {},
-  },
-
-  {
-    accessorKey: "judge3",
-    header: () => {},
-    cell: () => {},
-  },
-  {
-    accessorKey: "judge4",
-    header: () => {},
-    cell: () => {},
-  },
+  
 ];
 
 export default function ProjectsForm({ data_data }: any) {
@@ -329,7 +300,7 @@ export default function ProjectsForm({ data_data }: any) {
                 </DropdownMenu>
               </div>
               <div>
-                <Table className="border-2 ">
+                <Table className="border-2">
                   <TableHeader className="bg-gray-300">
                     {table.getHeaderGroups().map((headerGroup) => (
                       <TableRow className="" key={headerGroup.id}>
