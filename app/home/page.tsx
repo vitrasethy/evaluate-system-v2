@@ -14,7 +14,7 @@ export default async function Page() {
 
       <section className="flex flex-col justify-center items-center ">
         <div className="text-white sm:bg-[url('/bgcol.png')] bg-[url('/home.png')] bg-no-repeat bg-cover shadow-xl lg:w-2/5 border-px border-slate-50 bg-gray-100  rounded-2xl  mx-6 mb-6 hover:duration-300 hover:scale-105 hover:shadow-md hover:shadow-sky-700">
-          <Link href={"/home/events"}>
+          <Link href={"/home/1"}>
             <div className="bg-sky-950/90 backdrop-brightness-75 rounded-2xl px-4 py-6">
               <div className="mb-4">
                 <div className="flex justify-between items-center max-sm:hidden">

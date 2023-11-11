@@ -30,5 +30,5 @@ export async function login(prevState: any, formData: FormData) {
     httpOnly: true,
   });
 
-  redirect(`/events`);
+  redirect(`/home/events`);
 }

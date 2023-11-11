@@ -1,10 +1,9 @@
-import Selection from "@/app/home/events/Selection";
-import { getDepartments, getEvents } from "@/app/home/events/fetchData";
-import SelectionMobile from "@/app/home/events/SelectionMobile";
+import { GetDepartId } from "@/app/components/GetDepartId";
+import Selection from "@/app/components/Selection";
+import SelectionMobile from "@/app/components/SelectionMobile";
 
-export default async function page() {
-  const eventsData = await getEvents();
-  const departmentsData = await getDepartments();
+export default async function page({ params }: { params: { eventId: string } }) {
+  const departmentsData = await GetDepartId();
 
   return (
     <div>
@@ -18,11 +17,11 @@ export default async function page() {
       </div>
       {/* Mobile View */}
       <div className={"lg:hidden"}>
-        <SelectionMobile events={eventsData} departments={departmentsData} />
+        {/* <SelectionMobile events={eventsData} departments={departmentsData} /> */}
       </div>
       {/* Computer View */}
       <div className={"hidden lg:block"}>
-        <Selection events={eventsData} departments={departmentsData} />
+        <Selection eventId={params.eventId} departments={departmentsData} />
       </div>
     </div>
   );

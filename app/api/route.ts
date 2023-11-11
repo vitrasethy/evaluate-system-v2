@@ -3,8 +3,12 @@ import {cookies} from "next/headers";
 export async function GET() {
   const cookieStore = cookies();
   const token = cookieStore.get("access_token");
+  const eventId = cookieStore.get("event");
+  const departmentId = cookieStore.get("department");
+  const yearId = cookieStore.get("year");
+  
 
-  const res = await fetch('https://admin.rupp.support/events/1/departments/1/years/Year2', {
+  const res = await fetch(`https://admin.rupp.support/events/${eventId?.value}/departments/${departmentId?.value}/years/${yearId?.value}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: "Bearer " + token?.value,

@@ -1,6 +1,11 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { redirect } from "next/navigation";
-import { cookies } from "next/headers";
+import { useState } from "react";
+
+interface SelectionProps {
+  departments: any;
+}
 
 const data = {
   year: [
@@ -23,29 +28,12 @@ const data = {
   ],
 };
 
-interface SelectionProps {
-  events: any;
-  departments: any;
-}
-
-export default function Selection({ events, departments }: SelectionProps) {
-  async function action(formData: FormData) {
-    "use server";
-
-    const newDepartment = formData.get("department")?.toString();
-
-    const data = {
-      department: formData.get("department")?.toString(),
-      year: formData.get("year")?.toString(),
-    };
-
-    cookies().set("department", data.department ?? "");
-    cookies().set("year", data.year ?? "");
-    redirect("/home/events/projects");
-  }
+export default function SelectClient({ departments }: SelectionProps) {
+  const [selectDepartment, setSelectDepartment] = useState(false);
+  const [selectYear, setSelectYear] = useState(false);
 
   return (
-    <form action={action} className={"mb-3"}>
+    <>
       <div className={"flex justify-center gap-4"}>
         <Card className="w-[35%]">
           <CardHeader>
@@ -61,6 +49,7 @@ export default function Selection({ events, departments }: SelectionProps) {
                     name="department"
                     value={department.id}
                     className="hidden peer"
+                    onChange={() => setSelectDepartment(true)}
                     required
                   />
                   <label
@@ -92,6 +81,7 @@ export default function Selection({ events, departments }: SelectionProps) {
                     name="year"
                     value={years.id}
                     className="hidden peer"
+                    onChange={() => setSelectYear(true)}
                     required
                   />
                   <label
@@ -111,7 +101,7 @@ export default function Selection({ events, departments }: SelectionProps) {
         </Card>
       </div>
       <div className={"flex justify-center my-6"}>
-        <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+        <button disabled={selectDepartment && selectYear ? false : true} className="disabled:cursor-not-allowed disabled:bg-gray-500 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
           Search
           <svg
             className="w-3.5 h-3.5 ml-2"
@@ -130,6 +120,6 @@ export default function Selection({ events, departments }: SelectionProps) {
           </svg>
         </button>
       </div>
-    </form>
+    </>
   );
 }
