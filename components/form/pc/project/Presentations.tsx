@@ -39,21 +39,6 @@ export default function ProjectsForm({
   projectType,
   projectAmount,
 }: Props) {
-  const datas: Present[] = data_data.map((e: DataProps) => ({
-    no: 1,
-    id: e.eve_project_code,
-    projectName: e.eve_project_topic,
-    leader: e.eve_project_leader_name_latin,
-    judge: "4",
-    score: e.eve_project_topic,
-    complete: 1,
-    judge1: "Olivia",
-    judge2: "Emma",
-    judge3: "Amelia",
-    judge4: "Sophia",
-  }));
-
- 
   const [sortOrder, setSortOrder] = useState('asc');
 
   // Define sort function
@@ -62,16 +47,11 @@ export default function ProjectsForm({
     // After sorting, toggle sortOrder
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
-
-
- 
-  
-
   return (
     <div className="">
       
       <div className="flex justify-center ">
-        <table className="table-auto  border-1 rounded-lg border-2 bg-white mt-10 border-gray-400 shadow-2xl">
+        <table className="table-auto rounded-lg border-2 bg-white mt-10 border-gray-400 shadow-2xl">
           <thead className="">
             <tr>
               <th className="p-5 text-start" key="No">
@@ -99,25 +79,26 @@ export default function ProjectsForm({
             </tr>
           </thead>
           <tbody>
-            {datas.map((row, index) => (
+            {data_data.map((row: any) => (
               <tr
                 key={row.id}
                 className={`table-row rounded-xl  ${
-                  row.complete === 1
+                  1 === 1
                     ? "bg-green-300 rounded-md"
                     : row.complete === 2
                     ? "bg-yellow-200"
                     : ""
                 }`}
               >
-                <td className="px-5 py-4 border-y-2 ">{row.no}</td>
-                <td className="px-5 py-4 border-y-2 ">{row.id}</td>
-                <td className="px-5 py-4 border-y-2 ">{row.projectName}</td>
-                <td className="px-5 py-4 border-y-2 ">{row.leader}</td>
-                <td className="px-5 py-4 border-y-2 ">{row.score}</td>
-                <td className="px-5 py-4 border-y-2">Evaluate</td>
-                <td className="px-5 py-4 border-y-2 "><Modal/></td>
-                <td className="opacity-0">{row.complete}</td>
+                <td className="px-5 py-4  ">{1}</td>
+                <td className="px-5 py-4  ">{row.eve_project_code}</td>
+                <td className="px-5 py-4  ">{row.eve_project_topic}</td>
+                <td className="px-5 py-4  ">{row.eve_project_leader_name_latin}</td>
+                <td className="px-5 py-4  ">{60}</td>
+                <td className="px-5 py-4 ">Evaluate</td>
+                <td className="px-5 py-4  "><Modal/></td>
+                <td className="opacity-0">2</td>
+
               </tr>
             ))}
           </tbody>
