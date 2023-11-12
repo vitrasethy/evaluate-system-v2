@@ -54,8 +54,7 @@ export default function SelectClient({ departments }: SelectionProps) {
                   />
                   <label
                     htmlFor={department.name_latin}
-                    className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
+                    className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <div className="block">
                       <div className="w-full text-lg font-semibold">
                         {department.name_latin}
@@ -86,8 +85,7 @@ export default function SelectClient({ departments }: SelectionProps) {
                   />
                   <label
                     htmlFor={years.name}
-                    className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
+                    className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <div className="block">
                       <div className="w-full text-lg font-semibold">
                         {years.name}
@@ -101,15 +99,16 @@ export default function SelectClient({ departments }: SelectionProps) {
         </Card>
       </div>
       <div className={"flex justify-center my-6"}>
-        <button disabled={selectDepartment && selectYear ? false : true} className="disabled:cursor-not-allowed disabled:bg-gray-500 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+        <button
+          disabled={selectDepartment && selectYear ? false : true}
+          className="disabled:cursor-not-allowed disabled:bg-gray-500 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
           Search
           <svg
             className="w-3.5 h-3.5 ml-2"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 14 10"
-          >
+            viewBox="0 0 14 10">
             <path
               stroke="currentColor"
               strokeLinecap="round"

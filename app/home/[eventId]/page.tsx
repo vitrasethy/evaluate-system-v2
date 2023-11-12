@@ -17,7 +17,7 @@ export default async function page({ params }: { params: { eventId: string } }) 
       </div>
       {/* Mobile View */}
       <div className={"lg:hidden"}>
-        {/* <SelectionMobile events={eventsData} departments={departmentsData} /> */}
+        <SelectionMobile eventId={params.eventId} departments={departmentsData} />
       </div>
       {/* Computer View */}
       <div className={"hidden lg:block"}>
