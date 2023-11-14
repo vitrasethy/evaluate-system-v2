@@ -4,7 +4,7 @@ export async function GetDepartId() {
   const cookieStore = cookies();
   const token = cookieStore.get("access_token");
 
-  const res = await fetch("https://admin.rupp.support/departments", {
+  const res = await fetch("https://admin.rupp.support/api/v1/departments", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

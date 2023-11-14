@@ -4,7 +4,7 @@ async function getData() {
   const cookieStore = cookies();
   const token = cookieStore.get("access_token");
 
-  const res = await fetch("https://admin.rupp.support/auth/protected", {
+  const res = await fetch("https://admin.rupp.support/api/v1/auth/protected", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
