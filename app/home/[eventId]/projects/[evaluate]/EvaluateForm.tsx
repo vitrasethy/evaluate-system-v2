@@ -1,23 +1,22 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import React from "react";
-import FormButton from "@/app/home/[eventId]/projects/evaluate/FormButton";
-import { action } from "@/app/home/[eventId]/projects/evaluate/action";
+import FormButton from "@/app/home/[eventId]/projects/[evaluate]/FormButton";
+import { action } from "@/app/home/[eventId]/projects/[evaluate]/action";
 import { useSearchParams } from "next/navigation";
 
 function isOneDigit({ sco }: any): boolean {
   return sco < 10;
 }
 
-export default function EvaluateForm({ data }: any) {
-  const searchParams = useSearchParams();
-  const projectId = searchParams.get("project_id");
+export default function EvaluateForm({ data, projectId }: any) {
+  const allCriteria = data.category.flatMap((category: any) => category.criteria);
 
-  const actionWithProp = action.bind(null, data, projectId);
+  const actionWithProp = action.bind(null, allCriteria, projectId);
 
   return (
-    <form className="space-y-6" action={""}>
+    <form className="space-y-6" action={actionWithProp}>
       <div className="flex flex-wrap justify-around">
         <div className="sm:w-[45%] my-4">
           <Image alt="" src="/bgcol.png" width={400} height={400} />

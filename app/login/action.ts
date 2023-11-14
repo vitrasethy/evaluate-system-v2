@@ -9,7 +9,7 @@ export async function login(prevState: any, formData: FormData) {
     username: formData.get("username"),
     password: formData.get("password"),
   };
-  const res = await fetch("https://admin.rupp.support/auth/login", {
+  const res = await fetch("https://admin.rupp.support/api/v1/auth/login", {
     method: "POST",
     cache: 'no-store',
     headers: {

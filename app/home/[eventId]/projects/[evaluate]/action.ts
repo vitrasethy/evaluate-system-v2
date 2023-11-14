@@ -4,14 +4,17 @@ import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-const cookieStore = cookies();
-const token = cookieStore.get("access_token");
+
 
 export async function action(
   fetchData: any,
-  project_id: any,
+  projectId: any,
   formData: FormData,
 ) {
+  const cookieStore = cookies();
+  const token = cookieStore.get("access_token");
+  const eventId = cookieStore.get("event")
+
   const resGetUserId = await fetch(
     "https://admin.rupp.support/auth/protected",
     {
@@ -29,21 +32,24 @@ export async function action(
 
   const userDetail = await resGetUserId.json();
 
+  // criteria_id: cri.id,
+          // score: formData.get(cri.name),
+
   const data = {
-    project_id: project_id,
+    project_id: projectId?.evaluate,
     committee_id: userDetail.user_id,
     comment: formData.get("comment"),
     result: [
-      fetchData.category.map((cat: { criteria: { id: any; name: string }[] }) =>
-        cat.criteria.map((cri: { id: any; name: string }) => ({
-          criteria_id: cri.id,
-          score: formData.get(cri.name),
-        })),
-      ),
+      fetchData.category.map((e: any) => ({
+        criteria_id: e.id,
+        score: formData.get(e.name)
+      })),
     ],
   };
 
-  const res = await fetch("https://admin.rupp.support/auth/login", {
+  console.log(data.result)
+
+  const res = await fetch(`https://admin.rupp.support/events/${eventId?.value}/project-scores`, {
     method: "POST",
     cache: "no-store",
     headers: {
@@ -54,5 +60,5 @@ export async function action(
   });
 
   revalidatePath("/");
-  redirect(`/events`);
+  redirect(`/home/events`);
 }
