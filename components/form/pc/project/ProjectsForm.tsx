@@ -29,7 +29,7 @@ export default function SelectDemo() {
         {/* my evaluate */}
         <div className="mx-10">
           <Select>
-            <SelectTrigger className="w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
+            <SelectTrigger className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="My Evaluation" />
             </SelectTrigger>
             <SelectContent
@@ -45,7 +45,7 @@ export default function SelectDemo() {
         {/* presentation */}
         <div className="mx-10">
           <Select>
-            <SelectTrigger className="w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
+            <SelectTrigger className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="Presentation" />
             </SelectTrigger>
             <SelectContent

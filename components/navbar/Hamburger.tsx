@@ -30,12 +30,12 @@ export default function Hamburger({ isAdmin }: any) {
               href="/award"
               className={`${
                 isAdmin ? "" : "hidden"
-              } block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-7 mb-2 focus:outline-none`}>
+              } block text-center bg-[#014164] hover:bg-[#014190] text-white focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-7 mb-2 focus:outline-none`}>
               Result
             </a>
             <a
               href="/logout"
-              className="block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-7 mb-2 focus:outline-none">
+              className="block text-center bg-[#014164] hover:bg-[#014190] text-white focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mt-7 mb-2 focus:outline-none">
               Log Out
             </a>
           </SheetContent>
