@@ -5,7 +5,7 @@ async function getData() {
   const token = cookieStore.get("access_token");
 
   const res = await fetch(
-    "https://admin.rupp.support/events/1/evaluation-forms",
+    "https://admin.rupp.support/api/v1/events/1/evaluation-forms",
     {
       method: "GET",
       headers: {
