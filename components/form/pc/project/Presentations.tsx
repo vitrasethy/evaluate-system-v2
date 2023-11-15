@@ -102,8 +102,8 @@ export default function ProjectsForm({
 
         <div className="lg:hidden">
           {data_data.map((data: any) => (
-            <div className="w-[400px] flex justify-center" key={data.id}>
-              <div className="mt-8 rounded-lg border bg-card text-card-foreground shadow-sm w-11/12">
+            <div className="w-screen sm:w-[500px] flex justify-center" key={data.id}>
+              <div className="mt-8 rounded-lg border bg-card text-card-foreground shadow-sm w-full mx-5">
                 <div className="flex flex-col space-y-1.5 p-6">
                   <h1 className="text-2xl font-semibold leading-none tracking-tight">{data.eve_project_topic}</h1>
                   <p className="text-sm text-muted-foreground">ID: {data.eve_project_code}</p>

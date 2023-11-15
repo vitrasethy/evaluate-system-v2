@@ -59,16 +59,16 @@ export default function Award() {
       <div id="particle-container">{particles}</div>
 
         <div className="text-center h-[85vh] flex flex-col justify-center items-center">
-          <h1 className="text-4xl tracking-tight font-extrabold font-['Georgia'] uppercase sm:text-5xl md:text-8xl bg-gradient-to-r from-[#3b7cc1] to-[#9ae2ff] inline-block text-transparent bg-clip-text drop-shadow-[7px_5px_rgba(205,245,253,0.2)]">
+          <h1 className="text-4xl tracking-tight font-extrabold font-['Georgia'] uppercase sm:text-5xl md:text-[10rem] bg-gradient-to-r from-[#3b7cc1] to-[#9ae2ff] inline-block text-transparent bg-clip-text drop-shadow-[7px_5px_rgba(205,245,253,0.2)]">
             Engineering's Day
           </h1>
-          <p className="max-w-2xl mx-auto text-3xl mt-8 text-white">
+          <p className="max-w-4xl mx-auto text-6xl mt-8 text-white leading-snug">
             Award of Engineering's Day 2023
           </p>
-          <p className="max-w-2xl mx-auto text-3xl mt-8 text-white">
+          <p className="max-w-4xl mx-auto text-5xl mt-8 text-white">
             Congratulation to the winners...
           </p>
-      
+        
         </div>
       </section>
 
@@ -81,18 +81,32 @@ export default function Award() {
           <div className="before"></div>
           <div className="after"></div>
         </div>
-        <div className=" h-screen flex justify-center items-center">
-          <div className="flex justify-center w-[53%] gap-8 items-center bg-[url('/reward3.jpeg')] bg-no-repeat bg-cover border-2 border-gray-500">
-            <div className=" rounded-md bg-sky-950/30 backdrop-brightness-[.6] w-full p-8">
-              <h3 className="text-center text-4xl pb-16 font-semibold text-white">Leader Board</h3>
+        <div className=" h-screen flex flex-col justify-center items-center">
+          <div className="text-white flex justify-center items-center gap-16 mb-16">
+          <Image
+                src="/bgcol.png"
+                alt=""
+                width={600}
+                height={600}
+                className=""
+              />
+            <h1 className="text-7xl font-semibold">Engineering's Day 2023</h1>
+          </div>
+          <div className="w-[85%] h-[65%] bg-[url('/reward3.jpeg')] bg-no-repeat bg-cover border-2 border-gray-500">
+            <div className="flex flex-col justify-center h-full rounded-md bg-sky-950/30 backdrop-brightness-[.6] w-full px-20">
+              <div className="text-white text-center mb-12">
+              <h3 className="text-7xl font-medium">Leader Board</h3>
+            <h2 className="mt-8 mb-8 text-5xl">Department : Information Technology Engineering</h2>
+            <h2 className="text-5xl">Year: 3</h2>
+              </div>
 
-            <div className="relative w-auto items-center">
-              <div className="bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-lg border-1 py-6 px-10 rounded-full">
-                <div className="flex gap-8 text-2xl items-center">
+            <div className="relative w-auto">
+              <div className="flex bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-lg border-1 py-6 px-[4rem] rounded-xl h-[11rem]">
+                <div className="flex gap-16 text-4xl items-center">
                   <p>1st</p>
                   {isLoading2&&(
-                    <div className="flex gap-8 items-center">
-                      <p className="w-[45rem]">GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING</p>
+                    <div className="flex gap-16 items-center">
+                      <p className="w-[88.5rem] leading-snug">GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING</p>
                       <p>100&nbsp;point</p>
                       <p>003</p>
                     </div>
@@ -102,19 +116,19 @@ export default function Award() {
               <Image
                 src="/gold.png"
                 alt=""
-                width={50}
-                height={50}
-                className="absolute top-[-6px] left-[-10px] rotate-3"
+                width={70}
+                height={80}
+                className="absolute top-[-10px] left-[-25px] rotate-12"
               />
             </div>
 
             <div className="relative mt-8">
-              <div className="bg-gradient-to-r from-[#C0C0C0] to-[#e9e9eb] shadow-lg border-1 py-6 px-10 rounded-full">
-                <div className="flex gap-8 text-2xl items-center">
+              <div className="flex bg-gradient-to-r from-[#C0C0C0] to-[#e9e9eb] shadow-lg border-1 py-6 px-[4rem] rounded-xl h-[11rem]">
+                <div className="flex gap-16 text-4xl items-center">
                   <p>2nd</p>
                   {isLoading&&(
-                    <div className="flex gap-8 items-center">
-                      <p className="w-[45rem]">ASEAN FACTORI 4.0 PROJECT ASEAN FACTORI 4.0 PROJECT</p>
+                    <div className="flex gap-16 items-center">
+                      <p className="w-[87.5rem] leading-snug">ASEAN FACTORI 4.0 PROJECT ASEAN FACTORI 4.0 PROJECT</p>
                       <p>100&nbsp;point</p>
                       <p>003</p>
                     </div>
@@ -124,19 +138,19 @@ export default function Award() {
               <Image
                 src="/silver.png"
                 alt=""
-                width={50}
-                height={50}
-                className="absolute top-[-6px] left-[-10px] rotate-3"
+                width={70}
+                height={80}
+                className="absolute top-[-10px] left-[-25px] rotate-12"
               />
             </div>
 
             <div className="relative mt-8">
-              <div className="bg-gradient-to-r from-[#ca6533] to-[#F0C9BA] shadow-lg border-1 py-6 px-10 rounded-full">
-                <div className="flex gap-8 text-2xl items-center w-full">
+              <div className="flex bg-gradient-to-r from-[#ca6533] to-[#F0C9BA] shadow-lg border-1 py-6 px-[4rem] rounded-xl h-[11rem]">
+                <div className="flex gap-16 text-4xl items-center w-full">
                   <p>3rd</p>
                   {isLoading2&&(
-                    <div className="flex gap-8 items-center">
-                      <p className="w-[45rem]">A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION</p>
+                    <div className="flex gap-16 items-center">
+                      <p className="w-[87.5rem] leading-snug">A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION</p>
                       <p>100&nbsp;point</p>
                       <p>003</p>
                     </div>
@@ -146,13 +160,13 @@ export default function Award() {
               <Image
                 src="/bronze.png"
                 alt=""
-                width={50}
-                height={50}
-                className="absolute top-[-6px] left-[-10px] rotate-3"
+                width={70}
+                height={80}
+                className="absolute top-[-10px] left-[-25px] rotate-12"
               />
             </div>
 
-            <p className="text-center mt-8 text-white">Royal University of Phnom Penh || Faculty of Engineering</p>
+            <p className="text-center text-3xl mt-14 text-white">Royal University of Phnom Penh || Faculty of Engineering</p>
             </div>
               </div>
           </div>
