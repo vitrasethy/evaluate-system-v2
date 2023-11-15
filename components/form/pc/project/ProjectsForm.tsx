@@ -25,9 +25,9 @@ export default function SelectDemo() {
 
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-between sm:justify-center mx-5">
         {/* my evaluate */}
-        <div className="mx-10">
+        <div className="sm:mx-10">
           <Select>
             <SelectTrigger className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="My Evaluation" />
@@ -43,7 +43,7 @@ export default function SelectDemo() {
           </Select>
         </div>
         {/* presentation */}
-        <div className="mx-10">
+        <div className="sm:mx-10">
           <Select>
             <SelectTrigger className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="Presentation" />
