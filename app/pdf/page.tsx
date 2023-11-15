@@ -1,8 +1,9 @@
 'use client'
-import { Document, Page, View, Text, Image, PDFViewer, StyleSheet, Font,PDFDownloadLink } from "@react-pdf/renderer";
+import { Document, Page, View, Text, Image, PDFViewer, StyleSheet ,PDFDownloadLink } from "@react-pdf/renderer";
 import { useState, useEffect } from "react";
-
-Font.register( {family: "Inter", src: "/assets/font.otf"})
+import { Font } from "@react-pdf/renderer";
+// import myFont from "../fonts/Khmer-Regular.ttf";
+// Font.register( {family: "Khmer", src: myFont})
 
 const data = [
     {
@@ -211,7 +212,10 @@ const data = [
 const styles = StyleSheet.create({
     body: {
         padding: 20,
-    }
+    },
+    khmer: {
+      fontFamily:'Khmer',
+    },
 })
 
 const PDF = () => {
