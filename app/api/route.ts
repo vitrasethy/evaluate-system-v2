@@ -8,7 +8,7 @@ export async function GET() {
   const yearId = cookieStore.get("year");
   
 
-  const res = await fetch(`https://admin.rupp.support/events/${eventId?.value}/departments/${departmentId?.value}/years/${yearId?.value}`, {
+  const res = await fetch(`https://admin.rupp.support/api/v1/events/${eventId?.value}/departments/${departmentId?.value}/years/${yearId?.value}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: "Bearer " + token?.value,
