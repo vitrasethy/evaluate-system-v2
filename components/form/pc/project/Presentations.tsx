@@ -3,21 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { useState } from "react";
-import Modal from "./modal";
 
-export type Present = {
-  id: string;
-  projectName: string;
-  leader: string;
-  judge: string;
-  no: number;
-  score: number;
-  complete: number;
-  judge1: string;
-  judge2: string;
-  judge3: string;
-  judge4: string;
-};
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 type Props = {
   data_data: any;
@@ -28,8 +24,9 @@ type Props = {
 type DataProps = {
   eve_project_code: string;
   eve_project_topic: string;
-  eve_project_leader_name_latin: string;
   eve_project_type: string;
+  eve_project_members: string;
+  eve_project_committee: string;
 };
 
 export default function ProjectsForm({
@@ -45,6 +42,8 @@ export default function ProjectsForm({
     // After sorting, toggle sortOrder
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
+
+
   return (
     <div className="">
       <div className="flex justify-center ">
@@ -76,23 +75,52 @@ export default function ProjectsForm({
             {data_data.map((row: any) => (
               <tr
                 key={row.id}
-                className={`table-row rounded-xl  ${
-                  1 === 1
+                className={`table-row rounded-xl  ${1 === 1
                     ? "bg-green-300 rounded-md"
                     : row.complete === 2
-                    ? "bg-yellow-200"
-                    : ""
-                }`}>
+                      ? "bg-yellow-200"
+                      : ""
+                  }`}>
                 <td className="px-5 py-4  ">{1}</td>
                 <td className="px-5 py-4  ">{row.eve_project_code}</td>
                 <td className="px-5 py-4  ">{row.eve_project_topic}</td>
                 <td className="px-5 py-4  ">
-                  {row.eve_project_leader_name_latin}
+                  {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
                 <td className="px-5 py-4 ">Evaluate</td>
                 <td className="px-5 py-4  ">
-                  <Modal />
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline">Detail</Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle className="text-center py-5">Detail Of Project : {row.eve_project_topic}</DialogTitle>
+                        <DialogDescription className="flex">
+                         <p className="font-bold"> Name Of Project :</p>{row.eve_project_topic}
+                        </DialogDescription>
+                        <DialogDescription>
+                          ID Of Project : {row.eve_project_code}
+                        </DialogDescription>
+                        <DialogDescription>
+                          Leader Of Project : {row.eve_project_members[0].name_latin}
+                        </DialogDescription>
+                        <DialogDescription>
+                          Judge Of Project : {row.eve_project_committee[0].name}
+                        </DialogDescription>
+                        <DialogDescription>
+                           {row.eve_project_members.map((member: any) =>(
+                            <p>Member Of Project : {member.name_latin}</p>
+                          ))}
+                        </DialogDescription>
+                        <DialogDescription>
+                          Type Of Project : {row.eve_project_type}
+                        </DialogDescription>
+                      </DialogHeader>
+                      
+                    </DialogContent>
+                  </Dialog>
                 </td>
                 <td className="opacity-0">2</td>
               </tr>
@@ -107,7 +135,7 @@ export default function ProjectsForm({
                 <div className="flex flex-col space-y-1.5 p-6">
                   <h1 className="text-2xl font-semibold leading-none tracking-tight">{data.eve_project_topic}</h1>
                   <p className="text-sm text-muted-foreground">ID: {data.eve_project_code}</p>
-                  <p className="text-sm text-muted-foreground">Leader: {data.eve_project_leader_name_latin}</p>
+                  <p className="text-sm text-muted-foreground">Leader: {data.eve_project_members[0].name_latin}</p>
                   <p className="text-sm text-muted-foreground">Judge: 4 Evaluators</p>
                   <p className="text-sm text-muted-foreground">Score: 60 Points</p>
                 </div>

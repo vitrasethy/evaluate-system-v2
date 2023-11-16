@@ -46,7 +46,7 @@ export default function SelectDemo() {
     );
     setFilteredData(newFilteredData);
   }, [type, data]); // Include 'data' in the dependency array
-
+console.log(data);
   return (
     <div>
       <div className="flex justify-between sm:justify-center mx-5">
