@@ -10,18 +10,42 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+interface Project {
+  eve_project_type: string;
+}
+
 export default function SelectDemo() {
-  const [data, setData] = useState([]);
-  const [amount, setAmount] = useState("");
-  const [type, setType] = useState("");
+  const [data, setData] = useState<Project[]>([]);
+  const [filteredData, setFilteredData] = useState<Project[]>([]);
+  const [type, setType] = useState<string>("Presentation");
 
   useEffect(() => {
-    fetch("/api").then((res) => {
-      res.json().then((d) => {
-        setData(d.transData);
-      });
-    });
-  }, [data]);
+    // Simulate data fetching
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const result: Project[] = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Error fetching data:");
+      }
+    };
+
+    // Call the fetchData function when the component mounts
+    fetchData();
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+  useEffect(() => {
+    // Filter the data whenever 'type' changes
+    const newFilteredData = data.filter(
+      (item) => item.eve_project_type === type
+    );
+    setFilteredData(newFilteredData);
+  }, [type, data]); // Include 'data' in the dependency array
 
   return (
     <div>
@@ -33,9 +57,9 @@ export default function SelectDemo() {
               <SelectValue placeholder="My Evaluation" />
             </SelectTrigger>
             <SelectContent
-              onChange={(event) =>
-                setAmount((event.target as HTMLInputElement).value)
-              }
+            // onChange={(event) =>
+            //   setAmount((event.target as HTMLInputElement).value)
+            // }
             >
               <SelectItem value="my evaluate">My Evaluate</SelectItem>
               <SelectItem value="all evaluate">All Evaluate</SelectItem>
@@ -44,27 +68,25 @@ export default function SelectDemo() {
         </div>
         {/* presentation */}
         <div className="sm:mx-10">
-          <Select>
-            <SelectTrigger className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
+          <Select onValueChange={(e) => setType(e)}>
+            <SelectTrigger
+              value={type}
+              className="w-[140px] lg:w-[200px] h-14 bg-[#014164] hover:bg-[#014190] text-white">
               <SelectValue placeholder="Presentation" />
             </SelectTrigger>
-            <SelectContent
-              onChange={(event) =>
-                setType((event.target as HTMLInputElement).value)
-              }
-            >
-              <SelectItem value="Prsentation">Presentation</SelectItem>
-              <SelectItem value="2">Poster</SelectItem>
+            <SelectContent>
+              <SelectItem value="Presentation">Presentation</SelectItem>
+              <SelectItem value="Poster">Poster</SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
-      
+
       <div className="">
         <Presentations
-          data_data={data}
+          data_data={filteredData}
           projectType={type}
-          projectAmount={amount}
+          projectAmount={"amount"}
         />
       </div>
     </div>

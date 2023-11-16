@@ -15,7 +15,7 @@ export async function GET() {
     },
   })
 
-  const transData = await res.json()
+  // const transData = await res.json()
 
   // const transData = data.map((d: any, i = 2) => ({
   //   no: i++,
@@ -31,5 +31,5 @@ export async function GET() {
   //   judge4: "Sophia",
   // }));
 
-  return Response.json({ transData })
+  return Response.json(await res.json())
 }
