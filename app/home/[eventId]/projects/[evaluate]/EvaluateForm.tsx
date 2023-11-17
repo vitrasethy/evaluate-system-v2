@@ -68,14 +68,14 @@ export default function EvaluateForm({ data, projectId }: any) {
         (cat: {
           id: number;
           name: string;
-          weight: string;
+          weight: number;
           criteria: any[];
         }) => (
           <div key={cat.id}>
             <div className="flex justify-around items-center border-2 border-sky-700 py-4 px-6 bg-[#014164] text-white rounded-md">
               <h4 className="text-lg font-bold w-1/2 p-2.5">{cat.name}</h4>
               <h4 className="text-lg font-bold text-center w-1/2">
-                {cat.weight}
+                {cat.weight * 100}&nbsp;%
               </h4>
             </div>
             {cat.criteria.map((cri) => (
@@ -102,7 +102,7 @@ export default function EvaluateForm({ data, projectId }: any) {
                       <label
                         htmlFor={sco.toString() + cri.name}
                         className={`${
-                          isOneDigit({ sco }) ? "px-4 py-3" : "p-3"
+                          isOneDigit({ sco }) ? "sm:px-4 sm:py-3 px-2.5 py-1.5" : "sm:p-3 p-1.5"
                         } text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer `}
                       >
                         {sco}
