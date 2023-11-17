@@ -69,19 +69,16 @@ export default function ProjectsForm({
                 Score
                 <Image src="/sort.svg" alt="sort" width={20} height={20} />
               </th>
+              <th className="p-5 text-start" key="action">
+                Status
+              </th>
             </tr>
           </thead>
           <tbody>
             {data_data.map((row: any) => (
               <tr
                 key={row.id}
-                className={`table-row rounded-xl  ${
-                  1 === 1
-                    ? "bg-green-300 rounded-md"
-                    : row.complete === 2
-                    ? "bg-yellow-200"
-                    : ""
-                }`}>
+                className={`table-row rounded-xl`}>
                 <td className="px-5 py-4  ">{1}</td>
                 <td className="px-5 py-4  ">{row.eve_project_code}</td>
                 <td className="px-5 py-4  ">{row.eve_project_topic}</td>
@@ -89,42 +86,43 @@ export default function ProjectsForm({
                   {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
-                <td className="px-5 py-4 ">Evaluate</td>
+                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complate</p></td>
+                <td className="px-5 py-4  ">Evaluate</td>
                 <td className="px-5 py-4  ">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline">Detail</Button>
+                      <Button variant="outline" className="text-amber-500">Detail</Button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px]">
+                    <DialogContent className="sm:max-w-[625px] columns-2">
                       <DialogHeader>
-                        <DialogTitle className="text-center py-5">
-                          Detail Of Project : {row.eve_project_topic}
+                        <DialogTitle className="text-center py-5 ">
+                          View Details : {row.eve_project_topic}
                         </DialogTitle>
-                        <DialogDescription className="flex">
-                          <p className="font-bold"> Name Of Project :</p>&nbsp;
+                        <DialogDescription className="flex ">
+                          <p className=" w-1/2"> Name</p>&nbsp;
                           {row.eve_project_topic}
                         </DialogDescription>
                         <DialogDescription className="flex">
-                          <p className="font-bold">ID Of Project :</p>&nbsp;
+                          <p className=" w-1/2">ID</p>&nbsp;
                           {row.eve_project_code}
                         </DialogDescription>
                         <DialogDescription className="flex">
-                          <p className="font-bold">Leader Of Project :</p>&nbsp;
+                          <p className=" w-1/2">Leader</p>&nbsp;
                           {row.eve_project_members[0].name_latin}
                         </DialogDescription>
                         <DialogDescription className="flex">
-                          <p className="font-bold">Judge Of Project :</p>&nbsp;
+                          <p className=" w-1/2">Judge</p>&nbsp;
                           {row.eve_project_committee[0].name}
                         </DialogDescription>
                         <DialogDescription className="flex">
-                          <p className="font-bold">Type Of Project :</p>&nbsp;
+                          <p className=" w-1/2">Type</p>&nbsp;
                           {row.eve_project_type}
                         </DialogDescription>
                         <DialogDescription>
                           {row.eve_project_members.map((member: any) => (
                             <p className="flex">
-                              <p className="font-bold my-[3px]">
-                                Member{i++} Of Project :
+                              <p className=" my-[3px] w-1/2">
+                                Member{i++}
                               </p>
                               &nbsp;
                               <p className="my-[3px]">{member.name_latin}</p>
@@ -135,7 +133,7 @@ export default function ProjectsForm({
                     </DialogContent>
                   </Dialog>
                 </td>
-                <td className="opacity-0">2</td>
+                
               </tr>
             ))}
           </tbody>
