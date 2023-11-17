@@ -51,7 +51,7 @@ export default function ProjectsForm({
                 No
               </th>
               <th className="p-5 text-start" key="Id">
-                Id
+                ID
               </th>
               <th className="p-5 text-start">
                 Project Name
@@ -84,7 +84,7 @@ export default function ProjectsForm({
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
                 <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complete</p></td>
-                <td className="px-5 py-4  "><Link href={"./evaluate"}>Evaluate</Link></td>
+                <td className="px-5 py-4  "><Link href={"/home/projects/1/evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
                     <DialogTrigger asChild>
