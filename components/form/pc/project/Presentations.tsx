@@ -4,7 +4,7 @@ import Link from "next/link";
 import * as React from "react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 
 type Props = {
   data_data: any;
@@ -42,7 +42,7 @@ export default function ProjectsForm({
     // After sorting, toggle sortOrder
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
-
+  let i = 1;
 
   return (
     <div className="">
@@ -75,12 +75,13 @@ export default function ProjectsForm({
             {data_data.map((row: any) => (
               <tr
                 key={row.id}
-                className={`table-row rounded-xl  ${1 === 1
+                className={`table-row rounded-xl  ${
+                  1 === 1
                     ? "bg-green-300 rounded-md"
                     : row.complete === 2
-                      ? "bg-yellow-200"
-                      : ""
-                  }`}>
+                    ? "bg-yellow-200"
+                    : ""
+                }`}>
                 <td className="px-5 py-4  ">{1}</td>
                 <td className="px-5 py-4  ">{row.eve_project_code}</td>
                 <td className="px-5 py-4  ">{row.eve_project_topic}</td>
@@ -96,29 +97,41 @@ export default function ProjectsForm({
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px]">
                       <DialogHeader>
-                        <DialogTitle className="text-center py-5">Detail Of Project : {row.eve_project_topic}</DialogTitle>
+                        <DialogTitle className="text-center py-5">
+                          Detail Of Project : {row.eve_project_topic}
+                        </DialogTitle>
                         <DialogDescription className="flex">
-                         <p className="font-bold"> Name Of Project :</p>{row.eve_project_topic}
+                          <p className="font-bold"> Name Of Project :</p>&nbsp;
+                          {row.eve_project_topic}
+                        </DialogDescription>
+                        <DialogDescription className="flex">
+                          <p className="font-bold">ID Of Project :</p>&nbsp;
+                          {row.eve_project_code}
+                        </DialogDescription>
+                        <DialogDescription className="flex">
+                          <p className="font-bold">Leader Of Project :</p>&nbsp;
+                          {row.eve_project_members[0].name_latin}
+                        </DialogDescription>
+                        <DialogDescription className="flex">
+                          <p className="font-bold">Judge Of Project :</p>&nbsp;
+                          {row.eve_project_committee[0].name}
+                        </DialogDescription>
+                        <DialogDescription className="flex">
+                          <p className="font-bold">Type Of Project :</p>&nbsp;
+                          {row.eve_project_type}
                         </DialogDescription>
                         <DialogDescription>
-                          ID Of Project : {row.eve_project_code}
-                        </DialogDescription>
-                        <DialogDescription>
-                          Leader Of Project : {row.eve_project_members[0].name_latin}
-                        </DialogDescription>
-                        <DialogDescription>
-                          Judge Of Project : {row.eve_project_committee[0].name}
-                        </DialogDescription>
-                        <DialogDescription>
-                           {row.eve_project_members.map((member: any) =>(
-                            <p>Member Of Project : {member.name_latin}</p>
+                          {row.eve_project_members.map((member: any) => (
+                            <p className="flex">
+                              <p className="font-bold my-[3px]">
+                                Member{i++} Of Project :
+                              </p>
+                              &nbsp;
+                              <p className="my-[3px]">{member.name_latin}</p>
+                            </p>
                           ))}
                         </DialogDescription>
-                        <DialogDescription>
-                          Type Of Project : {row.eve_project_type}
-                        </DialogDescription>
                       </DialogHeader>
-                      
                     </DialogContent>
                   </Dialog>
                 </td>
@@ -130,18 +143,34 @@ export default function ProjectsForm({
 
         <div className="lg:hidden">
           {data_data.map((data: any) => (
-            <div className="w-screen sm:w-[500px] flex justify-center" key={data.id}>
+            <div
+              className="w-screen sm:w-[500px] flex justify-center"
+              key={data.id}>
               <div className="mt-8 rounded-lg border bg-card text-card-foreground shadow-sm w-full mx-5">
                 <div className="flex flex-col space-y-1.5 p-6">
-                  <h1 className="text-2xl font-semibold leading-none tracking-tight">{data.eve_project_topic}</h1>
-                  <p className="text-sm text-muted-foreground">ID: {data.eve_project_code}</p>
-                  <p className="text-sm text-muted-foreground">Leader: {data.eve_project_members[0].name_latin}</p>
-                  <p className="text-sm text-muted-foreground">Judge: 4 Evaluators</p>
-                  <p className="text-sm text-muted-foreground">Score: 60 Points</p>
+                  <h1 className="text-2xl font-semibold leading-none tracking-tight">
+                    {data.eve_project_topic}
+                  </h1>
+                  <p className="text-sm text-muted-foreground">
+                    ID: {data.eve_project_code}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Leader: {data.eve_project_members[0].name_latin}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Judge: 4 Evaluators
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Score: 60 Points
+                  </p>
                 </div>
                 <div className="items-center p-6 pt-0 flex justify-between">
-                  <button className="px-4 py-2 text-center bg-[#014164] hover:bg-[#014190] text-white font-medium rounded-md text-sm">Evaluate</button>
-                  <button className="px-4 py-2 text-center bg-[#014164] hover:bg-[#014190] text-white font-medium rounded-md text-sm">Edit Evaluation</button>
+                  <button className="px-4 py-2 text-center bg-[#014164] hover:bg-[#014190] text-white font-medium rounded-md text-sm">
+                    Evaluate
+                  </button>
+                  <button className="px-4 py-2 text-center bg-[#014164] hover:bg-[#014190] text-white font-medium rounded-md text-sm">
+                    Edit Evaluation
+                  </button>
                 </div>
               </div>
             </div>
