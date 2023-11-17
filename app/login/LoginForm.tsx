@@ -9,6 +9,7 @@ const initialState = {
 }
 
 export default function LoginForm() {
+  // @ts-ignore
   const [state, formAction] = useFormState(login, initialState)
 
   return (

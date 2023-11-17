@@ -11,12 +11,12 @@ export default function Page() {
             <Image
               className="sm:w-[120px] sm:h-[120px] min-[300px]:w-[80px] min-[300px]:h-[80px]"
               src="/logo-rupp.svg"
-              width={120}
-              height={120}
+              width={100}
+              height={100}
               alt="Picture of the author"
             />
             <Image
-              className="ml-2 mt-4 sm:w-[100px] sm:h-[100px] min-[300px]:w-[60px] min-[300px]:h-[60px]"
+              className="ml-2 mt-4 w-auto h-auto sm:w-[100px] sm:h-[100px] min-[300px]:w-[60px] min-[300px]:h-[60px]"
               src="/logo-fe.svg"
               width={100}
               height={100}
@@ -25,17 +25,17 @@ export default function Page() {
           </div>
           <div>
             <Image
-              className="sm:w-[500px] sm:h-[150px] min-[300px]:w-[250px] min-[300px]:h-[100px]"
+              className="sm:w-[500px] h-auto w-auto sm:h-[150px] min-[300px]:w-[250px] min-[300px]:h-[100px]"
               src="/title-rupp.svg"
-              width={500}
-              height={500}
+              width={0}
+              height={0}
               alt="Picture of the author"
             />
             <Image
               className="sm:w-[400px] sm:h-[100px] min-[300px]:w-[200px] min-[300px]:h-[80px]"
               src="/title-fe.svg"
-              width={400}
-              height={400}
+              width={0}
+              height={0}
               alt="Picture of the author"
             />
           </div>

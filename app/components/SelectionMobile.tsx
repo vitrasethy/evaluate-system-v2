@@ -28,7 +28,7 @@ export default function SelectionMobile({
     redirect(`/home/${eventId}/projects`);
   }
 
-  return (
+  return ( 
     <Card className={"mx-5"}>
       <form className={"mt-5"} action={action}>
         <SelectionMobileClient departments={departments} />
