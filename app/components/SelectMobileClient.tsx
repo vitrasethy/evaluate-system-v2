@@ -25,7 +25,7 @@ export default function SelectionMobileClient({ departments }: any) {
           onChange={(e) => setDepartment(e.target.value)}
           name={"department"}
           className="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value={""} selected>
+          <option value={""} defaultValue={""}>
             Choose a department
           </option>
           {departments.map((department: any) => (
@@ -45,17 +45,17 @@ export default function SelectionMobileClient({ departments }: any) {
           onChange={(e) => setYear(e.target.value)}
           name={"year"}
           className="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value={""} selected>
+          <option value={""} defaultValue={""}>
             Choose a department
           </option>
-          <option value={"1"}>Year 1</option>
-          <option value={"2"}>Year 2</option>
-          <option value={"3"}>Year 3</option>
-          <option value={"4"}>Year 4</option>
+          <option value={"Year1"}>Year 1</option>
+          <option value={"Year2"}>Year 2</option>
+          <option value={"Year3"}>Year 3</option>
+          <option value={"Year4"}>Year 4</option>
         </select>
         <div className={"flex justify-center"}>
           <button
-            disabled={isAllSelected() ? false : true}
+            disabled={!isAllSelected()}
             className="disabled:cursor-not-allowed disabled:bg-gray-500 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
             Search
             <svg

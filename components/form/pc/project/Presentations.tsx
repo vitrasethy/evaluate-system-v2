@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import * as React from "react";
 import { useState } from "react";
 
@@ -9,7 +8,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -21,18 +19,16 @@ type Props = {
   projectAmount: string;
 };
 
-type DataProps = {
-  eve_project_code: string;
-  eve_project_topic: string;
-  eve_project_type: string;
-  eve_project_members: string;
-  eve_project_committee: string;
-};
+// type DataProps = {
+//   eve_project_code: string;
+//   eve_project_topic: string;
+//   eve_project_type: string;
+//   eve_project_members: string;
+//   eve_project_committee: string;
+// };
 
 export default function ProjectsForm({
   data_data,
-  projectType,
-  projectAmount,
 }: Props) {
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -50,16 +46,16 @@ export default function ProjectsForm({
         <table className="hidden lg:block table-auto rounded-lg border-2 bg-white mt-10 border-gray-400 shadow-2xl">
           <thead className="">
             <tr>
-              <th className="p-5 text-start" key="No">
+              <th className="p-5 text-start">
                 No
               </th>
               <th className="p-5 text-start" key="Id">
-                ID
+                Id
               </th>
-              <th className="p-5 text-start" key="projectName">
+              <th className="p-5 text-start">
                 Project Name
               </th>
-              <th className="p-5 text-start" key="leader">
+              <th className="p-5 text-start">
                 Leader
               </th>
               <th
@@ -120,7 +116,7 @@ export default function ProjectsForm({
                         </DialogDescription>
                         <DialogDescription>
                           {row.eve_project_members.map((member: any) => (
-                            <p className="flex">
+                            <p key={member.id} className="flex">
                               <p className=" my-[3px] w-1/2">
                                 Member {i++}
                               </p>
