@@ -1,7 +1,16 @@
 import Link from "next/link";
+import {cookies} from "next/headers";
 
 async function getData() {
-  const res = await fetch('https://admin.rupp.support/api/v1/events')
+  const cookieStore = cookies();
+  const token = cookieStore.get("access_token");
+
+  const res = await fetch('https://admin.rupp.support/api/v1/events', {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: "Bearer " + token?.value,
+    },
+  })
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
