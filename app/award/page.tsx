@@ -106,8 +106,7 @@ export default function Award() {
                   <p>1st</p>
                   {isLoading2&&(
                     <div className="flex gap-16 items-center">
-                      <p className="w-[88.5rem] leading-snug">GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING</p>
-                      <p>100&nbsp;point</p>
+                      <p className="w-[102.4rem] leading-snug">GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING</p>
                       <p>003</p>
                     </div>
                   )}
@@ -128,8 +127,7 @@ export default function Award() {
                   <p>2nd</p>
                   {isLoading&&(
                     <div className="flex gap-16 items-center">
-                      <p className="w-[87.5rem] leading-snug">ASEAN FACTORI 4.0 PROJECT ASEAN FACTORI 4.0 PROJECT</p>
-                      <p>100&nbsp;point</p>
+                      <p className="w-[101.4rem] leading-snug">ASEAN FACTORI 4.0 PROJECT ASEAN FACTORI 4.0 PROJECT</p>
                       <p>003</p>
                     </div>
                   )}
@@ -150,8 +148,7 @@ export default function Award() {
                   <p>3rd</p>
                   {isLoading2&&(
                     <div className="flex gap-16 items-center">
-                      <p className="w-[87.5rem] leading-snug">A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION</p>
-                      <p>100&nbsp;point</p>
+                      <p className="w-[102rem] leading-snug">A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION</p>
                       <p>003</p>
                     </div>
                   )}

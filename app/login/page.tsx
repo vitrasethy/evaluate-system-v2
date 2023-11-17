@@ -6,7 +6,9 @@ export default function Page() {
     <main className="bg-[url('/stem.jpeg')] bg-cover h-screen">
       <div
         className="flex max-[1200px]:flex-col justify-evenly max-sm:pb-[15%] max-sm:justify-center items-center bg-sky-950/30 backdrop-brightness-75 h-full">
-        <div className="flex justify-center items-center">
+          <div className="flex flex-col gap-[7rem]">
+        <h1 className="text-white text-7xl 2xl:text-8xl font-semibold font-['Segoe UI Emoji'] max-[1205px]:hidden">Scoring System</h1>
+        <div className="flex justify-center items-center xl:pb-[28%]">
           <div className="mr-2">
             <Image
               className="sm:w-[120px] sm:h-[120px] min-[300px]:w-[80px] min-[300px]:h-[80px]"
@@ -40,6 +42,7 @@ export default function Page() {
             />
           </div>
         </div>
+          </div>
         <div
           className="w-[350px] sm:w-[500px] max-[768px]:mx-[5%] max-sm:mt-[10%] bg-[#fff] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] p-10 rounded-xl">
           <h1 className="text-black text-center min-[300px]:text-2xl sm:text-4xl font-medium">
