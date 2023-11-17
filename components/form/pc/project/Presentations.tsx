@@ -54,7 +54,7 @@ export default function ProjectsForm({
                 No
               </th>
               <th className="p-5 text-start" key="Id">
-                Id
+                ID
               </th>
               <th className="p-5 text-start" key="projectName">
                 Project Name
@@ -87,7 +87,7 @@ export default function ProjectsForm({
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
                 <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complate</p></td>
-                <td className="px-5 py-4  ">Evaluate</td>
+                <td className="px-5 py-4  "><Link href={"./evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
                     <DialogTrigger asChild>
@@ -95,8 +95,8 @@ export default function ProjectsForm({
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[625px] columns-2">
                       <DialogHeader>
-                        <DialogTitle className="text-center py-5 ">
-                          View Details : {row.eve_project_topic}
+                        <DialogTitle className="text-center mb-5 font-extrabold ">
+                          Project Details
                         </DialogTitle>
                         <DialogDescription className="flex ">
                           <p className=" w-1/2"> Name</p>&nbsp;
@@ -122,7 +122,7 @@ export default function ProjectsForm({
                           {row.eve_project_members.map((member: any) => (
                             <p className="flex">
                               <p className=" my-[3px] w-1/2">
-                                Member{i++}
+                                Member {i++}
                               </p>
                               &nbsp;
                               <p className="my-[3px]">{member.name_latin}</p>
