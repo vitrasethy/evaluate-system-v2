@@ -20,39 +20,22 @@ type Props = {
   projectAmount: string;
 };
 
-// type DataProps = {
-//   eve_project_code: string;
-//   eve_project_topic: string;
-//   eve_project_type: string;
-//   eve_project_members: string;
-//   eve_project_committee: string;
-// };
-
 export default function ProjectsForm({
   data_data,
 }: Props) {
 
   let i = 1;
-  const [sortedData, setSortedData] = useState(data_data);
-  const [sortOrder, setSortOrder] = useState("asc");
-
-  const handleSort = () => {
-    const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
-    setSortOrder(newSortOrder);
-
-    const sorted = [...data_data].sort((a, b) => {
-      const scoreA = parseInt(a.score, 10); // Assuming score is a string, convert it to a number
-      const scoreB = parseInt(b.score, 10);
-
-      if (newSortOrder === "asc") {
-        return scoreA - scoreB;
-      } else {
-        return scoreB - scoreA;
-      }
-    });
-
-    setSortedData(sorted);
-  };
+function isEvaluat(){
+  if(data_data.eve_project_committee[0].is_evaluated == true){
+    return <p className={`p-1 border-2 border-green-200 text-green-500 rounded-lg`}><p>Completed</p> </p>
+  }
+  else{
+    return <p className={`p-1 border-2 border-yellow-200 text-yellow-500 rounded-lg`}><p>Not Completed</p></p>
+  }
+  
+}
+console.log(data_data)
+  
   return (
     <div className="">
       <div className="flex justify-center ">
@@ -74,7 +57,7 @@ export default function ProjectsForm({
               <th
                 className="p-5 text-start cursor-pointer flex justify-center"
                 key="score"
-                onClick={handleSort}>
+               >
                 Score
                 <Image src="/sort.svg" alt="sort" width={20} height={20} />
               </th>
@@ -95,7 +78,7 @@ export default function ProjectsForm({
                   {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
-                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">Completed</p></td>
+                <td className={`p-1 border-2 rounded-lg ${isEvaluat}`}></td>
                 <td className="px-5 py-4  "><Link href={"/home/1/projects/evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
