@@ -25,13 +25,8 @@ export default function ProjectsForm({
 }: Props) {
 
   let i = 1;
-function isEvaluat(){
-  if(data_data.eve_project_committee[0].is_evaluated == true){
-    return <p className={`p-1 border-2 border-green-200 text-green-500 rounded-lg`}><p>Completed</p> </p>
-  }
-  else{
-    return <p className={`p-1 border-2 border-yellow-200 text-yellow-500 rounded-lg`}><p>Not Completed</p></p>
-  }
+function isEvaluat({is_evaluate}: any): boolean{
+  return is_evaluate == false;
   
 }
 console.log(data_data)
@@ -78,7 +73,10 @@ console.log(data_data)
                   {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
-                <td className={`p-1 border-2 rounded-lg ${isEvaluat}`}></td>
+                <td className="px-5 py-4">
+                  <p className={`p-1 border-2 rounded-lg ${isEvaluat({is_evaluate: true}) ? "bg-red-100 border-2 border-red-500" : "bg-green-100 border-2 border-green-500"}`}>Completed</p>
+                </td>
+                
                 <td className="px-5 py-4  "><Link href={"/home/1/projects/evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
