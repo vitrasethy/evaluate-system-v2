@@ -2,6 +2,7 @@
 import Image from "next/image";
 import * as React from "react";
 import { useState } from "react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -82,7 +83,7 @@ export default function ProjectsForm({
                   {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
-                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complate</p></td>
+                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complete</p></td>
                 <td className="px-5 py-4  "><Link href={"./evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
