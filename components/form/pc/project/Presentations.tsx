@@ -31,20 +31,32 @@ type Props = {
 export default function ProjectsForm({
   data_data,
 }: Props) {
+
+  let i = 1;
+  const [sortedData, setSortedData] = useState(data_data);
   const [sortOrder, setSortOrder] = useState("asc");
 
-  // Define sort function
   const handleSort = () => {
-    // Sort your data here based on sortOrder
-    // After sorting, toggle sortOrder
-    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-  };
-  let i = 1;
+    const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
+    setSortOrder(newSortOrder);
 
+    const sorted = [...data_data].sort((a, b) => {
+      const scoreA = parseInt(a.score, 10); // Assuming score is a string, convert it to a number
+      const scoreB = parseInt(b.score, 10);
+
+      if (newSortOrder === "asc") {
+        return scoreA - scoreB;
+      } else {
+        return scoreB - scoreA;
+      }
+    });
+
+    setSortedData(sorted);
+  };
   return (
     <div className="">
       <div className="flex justify-center ">
-        <table className="hidden lg:block table-auto rounded-lg border-2 bg-white mt-10 border-gray-400 shadow-2xl">
+        <table className="hidden lg:block table-auto rounded-lg border-2 bg-white mt-10 border-gray-400 shadow-2xl mb-20">
           <thead className="">
             <tr>
               <th className="p-5 text-start">
@@ -83,8 +95,8 @@ export default function ProjectsForm({
                   {row.eve_project_members[0].name_latin}
                 </td>
                 <td className="px-5 py-4  ">{60}</td>
-                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">complete</p></td>
-                <td className="px-5 py-4  "><Link href={"/home/projects/1/evaluate"}>Evaluate</Link></td>
+                <td className="px-5 py-4 text-green-500"><p className="p-1 border-2 border-green-200 bg-green-100 rounded-lg">Completed</p></td>
+                <td className="px-5 py-4  "><Link href={"/home/1/projects/evaluate"}>Evaluate</Link></td>
                 <td className="px-5 py-4  ">
                   <Dialog>
                     <DialogTrigger asChild>
@@ -100,7 +112,7 @@ export default function ProjectsForm({
                           {row.eve_project_topic}
                         </DialogDescription>
                         <DialogDescription className="flex">
-                          <p className=" w-1/2">ID</p>&nbsp;
+                          <p className=" w-1/2">Project Code</p>&nbsp;
                           {row.eve_project_code}
                         </DialogDescription>
                         <DialogDescription className="flex">
