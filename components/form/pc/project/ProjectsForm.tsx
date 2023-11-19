@@ -36,6 +36,7 @@ export default function SelectDemo() {
       }
     };
 
+    
     fetchData();
   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
