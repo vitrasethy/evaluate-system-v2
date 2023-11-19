@@ -15,12 +15,13 @@ interface Project {
 }
 
 export default function SelectDemo() {
+
   const [data, setData] = useState<Project[]>([]);
   const [filteredData, setFilteredData] = useState<Project[]>([]);
   const [type, setType] = useState<string>("Presentation");
 
   useEffect(() => {
-    // Simulate data fetching
+    
     const fetchData = async () => {
       try {
         const response = await fetch("/api");
@@ -35,7 +36,6 @@ export default function SelectDemo() {
       }
     };
 
-    // Call the fetchData function when the component mounts
     fetchData();
   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
