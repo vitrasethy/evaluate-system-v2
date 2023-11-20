@@ -60,32 +60,36 @@ function HtmlToImageToPdf() {
     <div>
       <div ref={htmlRef}>
       <section className="bg-[url('/certificate.jpg')] bg-contain w-[1132px] h-[803px] bg-no-repeat text-red-400">
-        <div className="flex flex-col justify-center items-center h-full pb-4">
-            <div className="grid grid-cols-2 gap-[130px]">
-                <div className="flex flex-col justify-center items-center font-['Times New Roman']">
+        <div className="flex flex-col justify-center items-center h-full">
+            <div className="grid grid-cols-2 gap-[134px]">
+                <div className="flex flex-col justify-center items-center font-['Times New Roman'] space-y-1">
                     <p className="font-bold text-[18pt]">6th ENGINEERING DAY</p>
-                    <p className="text-[14pt]">AWARDS 2023</p>
+                    <p className="text-[14pt] pt-2">AWARDS 2023</p>
                     <p className="text-[18pt] font-bold">CERTIFICATE OF APPRECIATION</p>
                     <p className="text-[13pt]">is hereby awarded to</p>
-                    <p className=" text-[18pt] font-bold">MR. SOKHA RITHY</p>
-                    <p className="text-[13pt]">in recognition for winning the</p>
-                    <p className="text-[13pt]">1st Award for top project entitled</p>
-                    <p className="text-[13pt] pb-3">"Aleo Vera: Production & Processing"</p>
+                    <p className=" text-[18pt] font-bold py-0.5">MR. SOKHA RITHY</p>
+                    <div className="text-[13pt] text-center leading-5 pb-5">
+                    <p className="">in recognition for winning the</p>
+                    <p className="">1st Award for top project entitled</p>
+                    <p className="">"Aleo Vera: Production & Processing"</p>
+                    </div>
                 </div>
-                <div className="flex flex-col justify-center items-center leading-relaxed">
+                <div className="flex flex-col justify-center items-center leading-relaxed space-y-1">
                     <p className="font-[KhmerMoulLight] text-[16pt]">ទិវាវិស្វកម្មលើកទី៦</p>
-                    <p className="font-[KhmerBTB] text-[13pt]">ជ័យលាភីឆ្នាំ២០២៣</p>
+                    <p className="font-[KhmerBTB] text-[13pt] pt-2">ជ័យលាភីឆ្នាំ២០២៣</p>
                     <p className="font-[KhmerMoulLight] text-[16pt]">ប័ណ្ណសរសើរ</p>
                     <p className="font-[KhmerBTB] text-[13pt]">ជូនចំពោះ</p>
-                    <p className="font-[KhmerMoulLight] text-[18pt]">លោក សុខា រិទ្ធី</p>
-                    <p className="font-[KhmerOSSiemreap] text-[12pt]">ដែលទទួលបានជ័យលាភី</p>
-                    <p className="font-[KhmerOSSiemreap] text-[12pt]">គម្រោងឆ្នើមលេខ ១ </p>
-                    <p className="font-[KhmerOSSiemreap] text-[12pt]">ក្រោមប្រធាមបទ <span className="font-['Times New Roman'] text-[13pt]">"Aleo Vera: Production & Processing"</span></p>
+                    <p className="font-[KhmerMoulLight] text-[18pt] py-0.5">លោក សុខា រិទ្ធី</p>
+                    <div className="font-[KhmerOSSiemreap] text-[12pt] text-center leading-6 pb-4">
+                    <p className="">ដែលទទួលបានជ័យលាភី</p>
+                    <p className="">គម្រោងឆ្នើមលេខ ១ </p>
+                    <p className="">ក្រោមប្រធាមបទ <span className="font-['Times New Roman'] text-[13pt]">"Aleo Vera: Production & Processing"</span></p>
                 </div>
+                    </div>
             </div>
-            <div>
+            <div className="pb-[8px]">
               <p className="font-[KhmerOSSiemreap] text-[11.54pt]">រាជធានីភ្នំពេញ ថ្ងៃទី២១ ខែវិច្ឆការ ឆ្នាំ២០២៣</p>
-              <p className="font-['Times New Roman'] text-[13.02pt]">Phnom Penh, 21-November 2023</p>
+              <p className="font-['Times New Roman'] text-[13.02pt] mt-1.5">Phnom Penh, 21-November 2023</p>
             </div>
         </div>
         </section>
