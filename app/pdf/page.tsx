@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import html2canvas from 'html2canvas';
 import jsPDF from "jspdf";
 import Image from "next/image";
-
+import '../pdf/fonts/fonts.css';
 function HtmlToImageToPdf() {
   const htmlRef = useRef(null);
 
@@ -59,25 +59,33 @@ function HtmlToImageToPdf() {
   return (
     <div>
       <div ref={htmlRef}>
-      <section className="bg-[url('/ctf.png')] bg-contain w-[1132px] h-[803px] bg-no-repeat">
-        <div className="flex justify-center items-center h-full">
-            <div className="grid grid-cols-2 gap-8">
-                <div className="flex flex-col justify-center items-center">
-                    <p className="text-2xl font-semibold">6th ENGINEERING DAY</p>
-                    <p>AWARDS 2023</p>
-                    <p>CERTIFICATE OF APPRECIATION</p>
-                    <p>is hereby awarded to</p>
-                    <p>MR. SOKHA RITHY</p>
-                    <p className="w-[50%]">in recognition for winning the 1st Award for top project entitled <span>"Aleo Vera: Production & Processing"</span></p>
+      <section className="bg-[url('/certificate.jpg')] bg-contain w-[1132px] h-[803px] bg-no-repeat text-red-400">
+        <div className="flex flex-col justify-center items-center h-full pb-4">
+            <div className="grid grid-cols-2 gap-[130px]">
+                <div className="flex flex-col justify-center items-center font-['Times New Roman']">
+                    <p className="font-bold text-[18pt]">6th ENGINEERING DAY</p>
+                    <p className="text-[14pt]">AWARDS 2023</p>
+                    <p className="text-[18pt] font-bold">CERTIFICATE OF APPRECIATION</p>
+                    <p className="text-[13pt]">is hereby awarded to</p>
+                    <p className=" text-[18pt] font-bold">MR. SOKHA RITHY</p>
+                    <p className="text-[13pt]">in recognition for winning the</p>
+                    <p className="text-[13pt]">1st Award for top project entitled</p>
+                    <p className="text-[13pt] pb-3">"Aleo Vera: Production & Processing"</p>
                 </div>
-                <div className="flex flex-col justify-center items-center">
-                    <p>ទិវាវិស្វកម្មលើកទី៦</p>
-                    <p>ជ័យលាភីឆ្នាំ២០២៣</p>
-                    <p>ប័ណ្ណសរសើរ</p>
-                    <p>ជូនចំពោះ</p>
-                    <p>លោក សុខា រិទ្ធី</p>
-                    <p className="w-[50%]">ដែលទទួលបានជ័យលាភីគម្រោងឆ្នើមលេខ ១ ក្រោមប្រធាមបទ<span>"Aleo Vera: Production & Processing"</span></p>
+                <div className="flex flex-col justify-center items-center leading-relaxed">
+                    <p className="font-[KhmerMoulLight] text-[16pt]">ទិវាវិស្វកម្មលើកទី៦</p>
+                    <p className="font-[KhmerBTB] text-[13pt]">ជ័យលាភីឆ្នាំ២០២៣</p>
+                    <p className="font-[KhmerMoulLight] text-[16pt]">ប័ណ្ណសរសើរ</p>
+                    <p className="font-[KhmerBTB] text-[13pt]">ជូនចំពោះ</p>
+                    <p className="font-[KhmerMoulLight] text-[18pt]">លោក សុខា រិទ្ធី</p>
+                    <p className="font-[KhmerOSSiemreap] text-[12pt]">ដែលទទួលបានជ័យលាភី</p>
+                    <p className="font-[KhmerOSSiemreap] text-[12pt]">គម្រោងឆ្នើមលេខ ១ </p>
+                    <p className="font-[KhmerOSSiemreap] text-[12pt]">ក្រោមប្រធាមបទ <span className="font-['Times New Roman'] text-[13pt]">"Aleo Vera: Production & Processing"</span></p>
                 </div>
+            </div>
+            <div>
+              <p className="font-[KhmerOSSiemreap] text-[11.54pt]">រាជធានីភ្នំពេញ ថ្ងៃទី២១ ខែវិច្ឆការ ឆ្នាំ២០២៣</p>
+              <p className="font-['Times New Roman'] text-[13.02pt]">Phnom Penh, 21-November 2023</p>
             </div>
         </div>
         </section>
